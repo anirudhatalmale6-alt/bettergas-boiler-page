@@ -85,6 +85,14 @@
   .btn-navy{background:var(--navy);color:#fff}
   .btn-navy:hover{background:var(--blue)}
 
+
+  /* recent installs */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0;padding:0;list-style:none}
+  .gallery li{border-radius:12px;overflow:hidden;background:var(--soft);aspect-ratio:4/5}
+  .gallery img{width:100%;height:100%;object-fit:cover}
+  .brands{margin:22px 0 0;color:var(--muted);font-weight:700}
+  .brands b{color:var(--navy)}
+
   /* signs */
   .signs{background:var(--soft)}
   .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -147,6 +155,7 @@
     .trust div:nth-child(-n+2){border-bottom:1px solid var(--line)}
     .svc,.steps,.quote .wrap{grid-template-columns:1fr}
     .grid4{grid-template-columns:1fr 1fr}
+    .gallery{grid-template-columns:1fr 1fr;gap:10px}
     .steps{gap:34px}
     .bar{display:grid}
   }
@@ -239,6 +248,22 @@
           <a class="btn btn-navy" href="#quote" data-job="repair">Book a boiler repair</a>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section id="installs">
+    <div class="wrap">
+      <h2>Some of our recent installs</h2>
+      <p class="sub">Real boilers we've fitted in London homes. Not stock photos.</p>
+      <ul class="gallery">
+        <li><img src="img/install-worcester-1.webp" alt="Worcester Bosch boiler fitted by Better Gas" width="720" height="900" loading="lazy"></li>
+        <li><img src="img/install-vaillant-1.webp" alt="Vaillant boiler fitted by Better Gas" width="720" height="900" loading="lazy"></li>
+        <li><img src="img/install-glowworm-1.webp" alt="Glow-worm boiler fitted by Better Gas" width="720" height="900" loading="lazy"></li>
+        <li><img src="img/install-vaillant-2.webp" alt="Vaillant boiler fitted by Better Gas" width="720" height="900" loading="lazy"></li>
+        <li><img src="img/install-worcester-2.webp" alt="Worcester Bosch boiler fitted by Better Gas" width="720" height="900" loading="lazy"></li>
+        <li><img src="img/install-worcester-3.webp" alt="Worcester Bosch boiler fitted by Better Gas" width="720" height="900" loading="lazy"></li>
+      </ul>
+      <p class="brands">We fit <b>Worcester Bosch</b>, <b>Vaillant</b> and <b>Glow-worm</b> boilers.</p>
     </div>
   </section>
 
