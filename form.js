@@ -1,4 +1,25 @@
 (function () {
+  // install photos: arrows scroll one photo at a time, and switch off at the ends
+  var gal = document.querySelector('.gallery');
+  if (gal) {
+    var btns = document.querySelectorAll('.gal-btn');
+    var step = function () { var li = gal.querySelector('li'); return li ? li.getBoundingClientRect().width + 16 : 300; };
+    var sync = function () {
+      var max = gal.scrollWidth - gal.clientWidth - 2;
+      btns.forEach(function (b) {
+        b.disabled = b.getAttribute('data-dir') === '-1' ? gal.scrollLeft <= 2 : gal.scrollLeft >= max;
+      });
+    };
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        gal.scrollBy({ left: step() * Number(b.getAttribute('data-dir')), behavior: 'smooth' });
+      });
+    });
+    gal.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  }
+
   // card buttons pre-select the matching job type in the form
   document.querySelectorAll('[data-job]').forEach(function (a) {
     a.addEventListener('click', function () {
