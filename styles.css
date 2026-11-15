@@ -169,6 +169,16 @@
     .card,form{padding:22px}
   }
 
+  /* brands we install */
+  .brandbar{padding:34px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .brandbar-title{margin:0 0 18px;text-align:center;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+  .brandbar ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:center}
+  .brandbar li{height:78px;display:grid;place-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .brandbar img{max-height:40px;max-width:100%;width:auto;object-fit:contain}
+  .trust .stars .g{width:20px;height:20px;vertical-align:-3px;margin-right:6px;display:inline-block}
+  @media (max-width:900px){.brandbar ul{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:560px){.brandbar li{height:64px;padding:10px}.brandbar img{max-height:32px}}
+
   /* plans */
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
   .plan{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;background:#fff;display:flex;flex-direction:column;box-shadow:0 10px 30px -18px rgba(20,30,70,.25)}
