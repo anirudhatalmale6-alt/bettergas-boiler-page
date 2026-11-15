@@ -41,6 +41,10 @@
   .ticks svg{width:18px;height:18px;fill:#7CE0A3;flex:none}
   .hero-art{position:relative;align-self:end;justify-self:center}
   .hero-art img{width:min(340px,80vw);height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+  .hero-art.photo{align-self:center;padding:40px 0}
+  .hero-art.photo img{width:min(360px,38vw);aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:6px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -20px rgba(0,0,0,.55);filter:none}
+  .hero.solo .wrap{grid-template-columns:1fr}
+  .hero.solo .wrap > div{max-width:760px}
 
   /* trust strip */
   .trust{background:var(--soft);border-bottom:1px solid var(--line)}
