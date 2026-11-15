@@ -26,6 +26,88 @@
     show(0); start();
   }
 
+  // install photos: a smooth, continuous roll to the right (15 Nov: "make the
+  // images smooth roll, not flicking"). The photos are repeated once so the
+  // strip can loop forever without a jump back to the start. Touch, hover,
+  // wheel or the arrows pause it so people can look; it carries on after.
+  var gal = document.querySelector('.gallery');
+  if (gal) {
+    var btns = document.querySelectorAll('.gal-btn');
+    var originals = Array.prototype.slice.call(gal.children);
+    var reduceG = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var step = function () { var li = gal.querySelector('li'); return li ? li.getBoundingClientRect().width + 16 : 300; };
+    if (!reduceG && originals.length) {
+      originals.forEach(function (li) {
+        var c = li.cloneNode(true);
+        c.setAttribute('aria-hidden', 'true');
+        c.querySelectorAll('img').forEach(function (im) { im.alt = ''; im.loading = 'eager'; });
+        gal.appendChild(c);
+      });
+      gal.style.scrollSnapType = 'none';
+      gal.style.scrollBehavior = 'auto';
+      var loopW = function () { return gal.children[originals.length].offsetLeft - gal.children[0].offsetLeft; };
+      var pos = 0, last = 0, hold = 0, SPEED = 32;            // pixels per second
+      var holdOn = function () { hold = performance.now() + 5000; };
+      ['mouseenter', 'touchstart', 'focusin', 'wheel'].forEach(function (ev) { gal.addEventListener(ev, holdOn, { passive: true }); });
+      gal.addEventListener('mouseleave', function () { hold = performance.now() + 800; });
+      btns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          holdOn();
+          gal.scrollBy({ left: step() * Number(b.getAttribute('data-dir')), behavior: 'smooth' });
+        });
+      });
+      var tick = function (t) {
+        var dt = last ? Math.min(t - last, 64) : 0; last = t;
+        var r = gal.getBoundingClientRect();
+        var onScreen = r.bottom > 0 && r.top < window.innerHeight;
+        if (t < hold || document.hidden || !onScreen) {
+          pos = gal.scrollLeft;                                  // follow any manual swipe
+        } else {
+          pos += SPEED * dt / 1000;
+          var w = loopW();
+          if (w > 0 && pos >= w) pos -= w;                       // seamless wrap
+          gal.scrollLeft = pos;
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    } else {
+      // reduced motion: plain swipe strip, arrows step one photo
+      btns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          gal.scrollBy({ left: step() * Number(b.getAttribute('data-dir')), behavior: 'smooth' });
+        });
+      });
+    }
+  }
+
+  // big review box: rotate, arrows, dots; pause on hover/focus/touch
+  var box = document.querySelector('.rv-box');
+  if (box) {
+    var slides = box.querySelectorAll('.rv-slide'), dots = box.querySelectorAll('.rv-dot');
+    var cur = 0, timer = null, paused = false;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var show = function (n) {
+      cur = (n + slides.length) % slides.length;
+      slides.forEach(function (sl, i) { sl.hidden = i !== cur; });
+      dots.forEach(function (d, i) { d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+    };
+    var start = function () {
+      if (reduce) return;
+      clearInterval(timer);
+      timer = setInterval(function () { if (!paused && !document.hidden) show(cur + 1); }, 6000);
+    };
+    box.querySelectorAll('.rv-arrow').forEach(function (b) {
+      b.addEventListener('click', function () { show(cur + Number(b.getAttribute('data-dir'))); start(); });
+    });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { show(i); start(); }); });
+    ['mouseenter', 'focusin', 'touchstart'].forEach(function (ev) { box.addEventListener(ev, function () { paused = true; }, { passive: true }); });
+    ['mouseleave', 'focusout'].forEach(function (ev) { box.addEventListener(ev, function () { paused = false; }); });
+    // phones have no mouseleave: resume a few seconds after the finger lifts
+    box.addEventListener('touchend', function () { setTimeout(function () { paused = false; }, 5000); }, { passive: true });
+    show(0); start();
+  }
+
   // install photos: arrows scroll one photo at a time, and switch off at the ends
   var gal = document.querySelector('.gallery');
   if (gal) {
