@@ -213,8 +213,8 @@
   .rv-score{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-decoration:none;color:var(--ink)}
   .rv-tp{height:28px;width:auto}.rv-tps{height:24px;width:auto}
   .rv-score span{font-size:14px;color:var(--muted)}.rv-score b{color:var(--navy);font-size:16px}
-  .rv-box{position:relative;background:linear-gradient(160deg,var(--navy),#26337A);color:#fff;border-radius:22px;padding:56px 64px 30px;min-height:330px;display:flex;flex-direction:column;box-shadow:0 30px 60px -30px rgba(20,30,70,.6);overflow:hidden}
-  .rv-mark{position:absolute;top:-28px;left:26px;font-size:180px;line-height:1;color:var(--orange);opacity:.9;font-family:Georgia,serif;pointer-events:none}
+  .rv-box{position:relative;background:linear-gradient(160deg,var(--navy),#26337A);color:#fff;border-radius:22px;padding:84px 64px 30px;min-height:330px;display:flex;flex-direction:column;box-shadow:0 30px 60px -30px rgba(20,30,70,.6);overflow:hidden}
+  .rv-mark{position:absolute;top:10px;left:26px;font-size:120px;line-height:1;height:80px;overflow:hidden;color:var(--orange);opacity:.9;font-family:Georgia,serif;pointer-events:none}
   .rv-slide{margin:0;flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px;animation:rvIn .5s ease}
   .rv-slide[hidden]{display:none}
   .rv-slide blockquote{margin:0;font-size:clamp(20px,2.4vw,28px);line-height:1.45;font-weight:700;letter-spacing:-.005em}
@@ -229,9 +229,9 @@
   .rv-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
   .btn-ghost-dark{border-color:var(--navy);color:var(--navy);background:#fff}
   .btn-ghost-dark:hover{background:var(--navy);color:#fff}
-  @keyframes rvIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @keyframes rvIn{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.rv-slide{animation:none}}
-  @media (max-width:700px){.rv-box{padding:46px 22px 22px;min-height:380px}.rv-mark{font-size:130px;top:-18px;left:12px}.rv-score{align-items:flex-start}.rv-actions .btn{width:100%}}
+  @media (max-width:700px){.rv-box{padding:70px 22px 22px;min-height:400px}.rv-mark{font-size:96px;height:64px;top:8px;left:18px}.rv-score{align-items:flex-start}.rv-actions .btn{width:100%}}
 
   /* plans */
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}

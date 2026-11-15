@@ -13,7 +13,7 @@
     var start = function () {
       if (reduce) return;
       clearInterval(timer);
-      timer = setInterval(function () { if (!paused && !document.hidden) show(cur + 1); }, 7000);
+      timer = setInterval(function () { if (!paused && !document.hidden) show(cur + 1); }, 6000);
     };
     box.querySelectorAll('.rv-arrow').forEach(function (b) {
       b.addEventListener('click', function () { show(cur + Number(b.getAttribute('data-dir'))); start(); });
@@ -21,6 +21,8 @@
     dots.forEach(function (d, i) { d.addEventListener('click', function () { show(i); start(); }); });
     ['mouseenter', 'focusin', 'touchstart'].forEach(function (ev) { box.addEventListener(ev, function () { paused = true; }, { passive: true }); });
     ['mouseleave', 'focusout'].forEach(function (ev) { box.addEventListener(ev, function () { paused = false; }); });
+    // phones have no mouseleave: resume a few seconds after the finger lifts
+    box.addEventListener('touchend', function () { setTimeout(function () { paused = false; }, 5000); }, { passive: true });
     show(0); start();
   }
 
@@ -43,6 +45,22 @@
     gal.addEventListener('scroll', sync, { passive: true });
     window.addEventListener('resize', sync);
     sync();
+    // 15 Nov: "put on auto cycle scroll" - move one photo to the right every
+    // 3.5 s, go back to the start at the end, and stop while someone is
+    // touching / hovering / using the arrows (resume a few seconds later).
+    var reduceG = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hold = 0;
+    var holdOn = function () { hold = Date.now() + 6000; };
+    ['mouseenter', 'touchstart', 'focusin', 'wheel'].forEach(function (ev) { gal.addEventListener(ev, holdOn, { passive: true }); });
+    btns.forEach(function (b) { b.addEventListener('click', holdOn); });
+    if (!reduceG) setInterval(function () {
+      if (Date.now() < hold || document.hidden) return;
+      var r = gal.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;   // only when on screen
+      var max = gal.scrollWidth - gal.clientWidth - 2;
+      if (gal.scrollLeft >= max) gal.scrollTo({ left: 0, behavior: 'smooth' });
+      else gal.scrollBy({ left: step(), behavior: 'smooth' });
+    }, 3500);
   }
 
   // card buttons pre-select the matching job type in the form
