@@ -1,4 +1,29 @@
 (function () {
+  // big review box: rotate, arrows, dots; pause on hover/focus/touch
+  var box = document.querySelector('.rv-box');
+  if (box) {
+    var slides = box.querySelectorAll('.rv-slide'), dots = box.querySelectorAll('.rv-dot');
+    var cur = 0, timer = null, paused = false;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var show = function (n) {
+      cur = (n + slides.length) % slides.length;
+      slides.forEach(function (sl, i) { sl.hidden = i !== cur; });
+      dots.forEach(function (d, i) { d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+    };
+    var start = function () {
+      if (reduce) return;
+      clearInterval(timer);
+      timer = setInterval(function () { if (!paused && !document.hidden) show(cur + 1); }, 7000);
+    };
+    box.querySelectorAll('.rv-arrow').forEach(function (b) {
+      b.addEventListener('click', function () { show(cur + Number(b.getAttribute('data-dir'))); start(); });
+    });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { show(i); start(); }); });
+    ['mouseenter', 'focusin', 'touchstart'].forEach(function (ev) { box.addEventListener(ev, function () { paused = true; }, { passive: true }); });
+    ['mouseleave', 'focusout'].forEach(function (ev) { box.addEventListener(ev, function () { paused = false; }); });
+    show(0); start();
+  }
+
   // install photos: arrows scroll one photo at a time, and switch off at the ends
   var gal = document.querySelector('.gallery');
   if (gal) {
