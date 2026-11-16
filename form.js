@@ -145,6 +145,14 @@
     }, 3500);
   }
 
+  // WhatsApp taps are counted as "Contact", never as a lead
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.fbq) window.fbq('track', 'Contact');
+      if (window.gtag) window.gtag('event', 'contact', { method: 'whatsapp' });
+    });
+  });
+
   // card buttons pre-select the matching job type in the form
   document.querySelectorAll('[data-job]').forEach(function (a) {
     a.addEventListener('click', function () {

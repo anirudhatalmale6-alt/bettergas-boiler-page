@@ -233,6 +233,14 @@
   @media (prefers-reduced-motion:reduce){.rv-slide{animation:none}}
   @media (max-width:700px){.rv-box{padding:70px 22px 22px;min-height:400px}.rv-mark{font-size:96px;height:64px;top:8px;left:18px}.rv-score{align-items:flex-start}.rv-actions .btn{width:100%}}
 
+  /* WhatsApp: extra contact line in the quote box + floating button */
+  .alt a.wa .ic{background:#25D366;color:#fff}
+  .alt a.wa .ic svg{fill:#fff}
+  .wa-float{position:fixed;right:20px;bottom:24px;z-index:31;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(20,30,70,.28);transition:transform .15s}
+  .wa-float:hover{transform:scale(1.06)}
+  .wa-float svg{width:32px;height:32px;fill:#fff}
+  @media (max-width:900px){.wa-float{right:14px;bottom:calc(84px + env(safe-area-inset-bottom));width:54px;height:54px}}
+
   /* plans */
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
   .plan{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;background:#fff;display:flex;flex-direction:column;box-shadow:0 10px 30px -18px rgba(20,30,70,.25)}
