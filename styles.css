@@ -135,7 +135,7 @@
   .msg.ok{background:#E8F7EE;color:#14532D}
   .msg.err{background:#FDECEC;color:#7F1D1D}
 
-  footer{background:#0A2152;color:#A9C0E8;padding:34px 0 110px;font-size:14px}
+  footer{background:var(--navy);color:#DCE7F8;padding:34px 0 110px;font-size:14px}
   footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
   footer b{color:#fff}
 
