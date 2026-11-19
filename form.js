@@ -184,7 +184,7 @@
     // no inbox connected yet: say so, never pretend it went
     var endpoint = form.getAttribute('data-endpoint');
     if (!endpoint) {
-      say('Preview only: this form is not connected yet, so nothing was sent. Please call 07497 899551.', false);
+      say('Preview only: this form is not connected yet, so nothing was sent. Please call 0800 059 9951.', false);
       return;
     }
     var btn = form.querySelector('button[type=submit]');
@@ -201,7 +201,7 @@
         if (window.gtag) { window.gtag('event', 'generate_lead'); if (window.BG_LEAD_SEND_TO) window.gtag('event', 'conversion', { send_to: window.BG_LEAD_SEND_TO, value: 1.0, currency: 'GBP' }); }
       })
       .catch(function () {
-        say('Sorry, that did not go through. Please call us on 07497 899551.', false);
+        say('Sorry, that did not go through. Please call us free on 0800 059 9951.', false);
       })
       .then(function () {
         btn.disabled = false;
