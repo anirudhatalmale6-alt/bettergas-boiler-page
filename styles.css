@@ -242,6 +242,12 @@
   .wa-float svg{width:32px;height:32px;fill:#fff}
   @media (max-width:900px){.wa-float{right:14px;bottom:calc(84px + env(safe-area-inset-bottom));width:54px;height:54px}}
 
+  /* 19 Nov: square corners to match bettergas.co.uk ("I like the square look").
+     Circles (icons, WhatsApp, dots, arrows) stay round. */
+  :root{--radius:0px}
+  .btn,.eyebrow,.card,.card .tag,.hero-art.photo img,.gallery li,.gallery li span,.sign,.note,.step,
+  .alt a,form,input,select,textarea,.choice label,.msg,.brandbar li,.acc,.rev,.rv-box,.plan,.plan .flag,.others a{border-radius:0}
+
   /* plans */
   .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
   .plan{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;background:#fff;display:flex;flex-direction:column;box-shadow:0 10px 30px -18px rgba(20,30,70,.25)}
