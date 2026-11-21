@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: #ffffff;
+    font-family: "Manrope", Arial, sans-serif;
+    color: #172033;
+  }
+
+  .bettergas-certifications {
+    width: 100%;
+    background: #ffffff;
+    padding: 78px 20px 82px;
+  }
+
+  .bettergas-certifications-inner {
+    width: min(1040px, 100%);
+    margin: 0 auto;
+  }
+
+  .bettergas-certifications-head {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .bettergas-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 16px;
+
+    color: #1D2756;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .bettergas-eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: #FFAB01;
+  }
+
+  .bettergas-certifications-head h2 {
+    margin: 0 0 16px;
+
+    color: #041B3E;
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-size: clamp(34px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .bettergas-certifications-head p {
+    margin: 0 auto;
+    max-width: 680px;
+
+    color: #6E798C;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+
+  .bettergas-cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .bettergas-cert-card {
+    min-height: 250px;
+    padding: 28px;
+
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    gap: 24px;
+
+    background: #F7F9FC;
+    border: 1px solid #DFE5ED;
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .bettergas-cert-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(29, 39, 86, 0.20);
+    box-shadow: 0 18px 45px rgba(4, 34, 78, 0.08);
+  }
+
+  .bettergas-cert-logo-box {
+    position: relative;
+
+    height: 115px;
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    border: 1px solid #E5EAF1;
+  }
+
+  .bettergas-cert-logo-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18px;
+
+    width: 34px;
+    height: 3px;
+
+    background: #FFAB01;
+  }
+
+  .bettergas-cert-logo-box img {
+    max-width: 100%;
+    max-height: 72px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .bettergas-cert-copy h3 {
+    margin: 0 0 10px;
+
+    color: #041B3E;
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .bettergas-cert-copy p {
+    margin: 0;
+
+    color: #6E798C;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+
+  @media (max-width: 850px) {
+    .bettergas-cert-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bettergas-cert-card {
+      min-height: 220px;
+    }
+  }
+
+
+  /* ==========================
+     MOBILE ONLY
+  ========================== */
+
+  @media (max-width: 560px) {
+
+    html,
+    body {
+      width: 100% !important;
+      max-width: 100% !important;
+
+      height: auto !important;
+      min-height: 0 !important;
+
+      margin: 0 !important;
+      padding: 0 !important;
+
+      overflow: hidden !important;
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
+
+      overscroll-behavior: none !important;
+      overscroll-behavior-x: none !important;
+      overscroll-behavior-y: none !important;
+
+      -webkit-overflow-scrolling: auto !important;
+
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    .bettergas-certifications {
+      width: 100%;
+      max-width: 100%;
+
+      height: auto !important;
+      min-height: 0 !important;
+
+      margin: 0;
+      padding: 12px 10px 0;
+
+      overflow: hidden !important;
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
+
+      overscroll-behavior: none !important;
+    }
+
+    .bettergas-certifications-inner {
+      width: 100%;
+      max-width: 100%;
+
+      height: auto !important;
+      min-height: 0 !important;
+
+      margin: 0;
+      padding: 0;
+
+      overflow: hidden !important;
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
+
+      overscroll-behavior: none !important;
+    }
+
+    .bettergas-certifications-head {
+      max-width: 100%;
+
+      height: auto !important;
+      min-height: 0 !important;
+
+      margin: 0 auto 16px;
+      padding: 0;
+
+      overflow: hidden !important;
+    }
+
+    .bettergas-eyebrow {
+      gap: 7px;
+
+      margin: 0 0 8px;
+
+      font-size: 8px;
+      letter-spacing: 0.1em;
+    }
+
+    .bettergas-eyebrow::before {
+      width: 18px;
+      height: 2px;
+    }
+
+    .bettergas-certifications-head h2 {
+      margin: 0 0 8px;
+
+      font-size: 27px;
+      line-height: 1.02;
+
+      letter-spacing: -0.04em;
+    }
+
+    .bettergas-certifications-head p {
+      max-width: 100%;
+
+      margin: 0;
+
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .bettergas-cert-grid {
+      grid-template-columns: 1fr;
+
+      gap: 8px;
+
+      height: auto !important;
+      min-height: 0 !important;
+
+      margin: 0;
+      padding: 0;
+
+      overflow: hidden !important;
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
+
+      overscroll-behavior: none !important;
+    }
+
+    .bettergas-cert-card {
+      grid-template-columns: 1fr;
+
+      gap: 9px;
+
+      min-height: 0 !important;
+      height: auto !important;
+
+      margin: 0;
+      padding: 12px;
+
+      overflow: hidden !important;
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
+
+      overscroll-behavior: none !important;
+    }
+
+    .bettergas-cert-card:hover {
+      transform: none;
+      border-color: #DFE5ED;
+      box-shadow: none;
+    }
+
+    .bettergas-cert-logo-box {
+      width: 100%;
+
+      height: 68px;
+      min-height: 0 !important;
+
+      padding: 9px;
+
+      overflow: hidden !important;
+    }
+
+    .bettergas-cert-logo-box::before {
+      left: 12px;
+
+      width: 24px;
+      height: 2px;
+    }
+
+    .bettergas-cert-logo-box img {
+      max-width: 150px;
+      max-height: 44px;
+    }
+
+    .bettergas-cert-copy {
+      min-width: 0;
+
+      overflow: hidden !important;
+    }
+
+    .bettergas-cert-copy h3 {
+      margin: 0 0 5px;
+
+      font-size: 14px;
+      line-height: 1.15;
+    }
+
+    .bettergas-cert-copy p {
+      margin: 0;
+
+      font-size: 9.5px;
+      line-height: 1.45;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<section class="bettergas-certifications">
+
+  <div class="bettergas-certifications-inner">
+
+    <div class="bettergas-certifications-head">
+
+      <div class="bettergas-eyebrow">
+        Qualifications &amp; Memberships
+      </div>
+
+      <h2>
+        Qualified. Accredited. Trusted.
+      </h2>
+
+      <p>
+        Professional gas, plumbing and heating work should always be carried out to recognised industry standards. Our certifications and memberships give customers added confidence in the quality, compliance and professionalism behind every job.
+      </p>
+
+    </div>
+
+
+    <div class="bettergas-cert-grid">
+
+      <article class="bettergas-cert-card">
+
+        <div class="bettergas-cert-logo-box">
+
+          <img
+            src="https://static.wixstatic.com/media/403ad3_0e66c59bdca1426f872b15f633ae4d2b~mv2.png"
+            alt="Gas Safe Register"
+          >
+
+        </div>
+
+        <div class="bettergas-cert-copy">
+
+          <h3>
+            Gas Safe Registered
+          </h3>
+
+          <p>
+            Gas work carried out by a properly qualified Gas Safe registered engineer, helping ensure safety, compliance and peace of mind for domestic and commercial customers across London.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="bettergas-cert-card">
+
+        <div class="bettergas-cert-logo-box">
+
+          <img
+            src="https://static.wixstatic.com/media/403ad3_76e8f3dd51094896815b63990683e3ec~mv2.webp"
+            alt="CIPHE"
+          >
+
+        </div>
+
+        <div class="bettergas-cert-copy">
+
+          <h3>
+            CIPHE Membership
+          </h3>
+
+          <p>
+            Membership with the Chartered Institute of Plumbing and Heating Engineering reflects a commitment to recognised industry standards, professional workmanship and ongoing technical excellence.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

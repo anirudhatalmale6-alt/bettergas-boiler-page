@@ -1,0 +1,312 @@
+<div class="bettergas-contact-grid">
+
+  <!-- PHONE -->
+  <article class="bettergas-contact-card featured">
+
+    <span class="bettergas-contact-number">01</span>
+
+    <div class="bettergas-contact-content">
+      <span class="bettergas-contact-label">Phone</span>
+
+      <h3>
+        <a href="tel:08000599951">
+          0800 059 9951
+        </a>
+      </h3>
+
+      <p>
+        Call Better Gas to arrange a visit, discuss a job or request
+        urgent plumbing and heating support.
+      </p>
+    </div>
+
+  </article>
+
+
+  <!-- EMAIL -->
+  <article class="bettergas-contact-card">
+
+    <span class="bettergas-contact-number">02</span>
+
+    <div class="bettergas-contact-content">
+      <span class="bettergas-contact-label">Email</span>
+
+      <h3>
+        <a href="mailto:Info@bettergas.co.uk">
+          Info@bettergas.co.uk
+        </a>
+      </h3>
+
+      <p>
+        Send us details of your enquiry, project or service requirement
+        and we will get back to you.
+      </p>
+    </div>
+
+  </article>
+
+
+  <!-- LOCATION -->
+  <article class="bettergas-contact-card">
+
+    <span class="bettergas-contact-number">03</span>
+
+    <div class="bettergas-contact-content">
+      <span class="bettergas-contact-label">Based in London</span>
+
+      <h3>Kensington</h3>
+
+      <p>
+       142 Cromwell Road, SW7 4EF<br>
+      </p>
+    </div>
+
+  </article>
+
+
+  <!-- HOURS -->
+  <article class="bettergas-contact-card">
+
+    <span class="bettergas-contact-number">04</span>
+
+    <div class="bettergas-contact-content">
+      <span class="bettergas-contact-label">Opening Hours</span>
+
+      <h3>24 Hours</h3>
+
+      <p>
+        Available for planned plumbing and heating work as well as
+        urgent faults and emergency support.
+      </p>
+    </div>
+
+  </article>
+
+</div>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: transparent;
+    font-family: "Manrope", Arial, sans-serif;
+  }
+
+  .bettergas-contact-grid {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid #DCE3EC;
+    border-left: 1px solid #DCE3EC;
+
+    background: transparent;
+  }
+
+  .bettergas-contact-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 255px;
+
+    padding: 36px 42px;
+
+    background: #FFFFFF;
+
+    border-right: 1px solid #DCE3EC;
+    border-bottom: 1px solid #DCE3EC;
+
+    transition:
+      transform 0.28s ease,
+      background-color 0.28s ease;
+  }
+
+  .bettergas-contact-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: -62px;
+    right: -62px;
+
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    background: #EEF4FB;
+
+    transition:
+      transform 0.28s ease,
+      background-color 0.28s ease;
+  }
+
+  .bettergas-contact-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .bettergas-contact-card:hover::after {
+    transform: scale(1.08);
+  }
+
+  .bettergas-contact-number {
+    position: relative;
+    z-index: 2;
+
+    color: #1D2756;
+
+    font-size: 9px;
+    font-weight: 800;
+  }
+
+  .bettergas-contact-content {
+    position: absolute;
+    z-index: 2;
+
+    left: 42px;
+    right: 42px;
+    bottom: 38px;
+  }
+
+  .bettergas-contact-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #8493A7;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .bettergas-contact-content h3 {
+    margin: 0;
+
+    color: #061A38;
+
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+  }
+
+  .bettergas-contact-content h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .bettergas-contact-content p {
+    margin: 14px 0 0;
+
+    max-width: 520px;
+
+    color: #6E7F95;
+
+    font-size: 11.5px;
+    line-height: 1.8;
+  }
+
+  /* FEATURED BLUE CARD */
+
+  .bettergas-contact-card.featured {
+    background: #0E56B9;
+  }
+
+  .bettergas-contact-card.featured::after {
+    background: rgba(255,255,255,0.18);
+  }
+
+  .bettergas-contact-card.featured .bettergas-contact-number {
+    color: #FFAB01;
+  }
+
+  .bettergas-contact-card.featured .bettergas-contact-label {
+    color: rgba(255,255,255,0.55);
+  }
+
+  .bettergas-contact-card.featured h3,
+  .bettergas-contact-card.featured h3 a {
+    color: #FFFFFF;
+  }
+
+  .bettergas-contact-card.featured p {
+    color: rgba(255,255,255,0.70);
+  }
+
+  /* HOVER FOR WHITE CARDS */
+
+  .bettergas-contact-card:not(.featured):hover {
+    background: #1D2756;
+  }
+
+  .bettergas-contact-card:not(.featured):hover::after {
+    background: rgba(255,171,1,0.14);
+  }
+
+  .bettergas-contact-card:not(.featured):hover .bettergas-contact-number {
+    color: #FFAB01;
+  }
+
+  .bettergas-contact-card:not(.featured):hover .bettergas-contact-label {
+    color: rgba(255,255,255,0.55);
+  }
+
+  .bettergas-contact-card:not(.featured):hover h3,
+  .bettergas-contact-card:not(.featured):hover h3 a {
+    color: #FFFFFF;
+  }
+
+  .bettergas-contact-card:not(.featured):hover p {
+    color: rgba(255,255,255,0.70);
+  }
+
+  @media (max-width: 800px) {
+    .bettergas-contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bettergas-contact-card {
+      min-height: 220px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .bettergas-contact-card {
+      min-height: 190px;
+      padding: 28px 24px;
+    }
+
+    .bettergas-contact-content {
+      left: 24px;
+      right: 24px;
+      bottom: 26px;
+    }
+
+    .bettergas-contact-content h3 {
+      font-size: 22px;
+    }
+
+    .bettergas-contact-content p {
+      font-size: 10.5px;
+      line-height: 1.7;
+    }
+
+    .bettergas-contact-card::after {
+      width: 120px;
+      height: 120px;
+
+      top: -54px;
+      right: -54px;
+    }
+  }
+</style>

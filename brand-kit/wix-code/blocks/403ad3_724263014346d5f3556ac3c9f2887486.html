@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  background:transparent;
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-reviews-carousel{
+  width:100%;
+  overflow:hidden;
+  background:transparent;
+  padding:14px 0 24px;
+  position:relative;
+}
+
+
+/* subtle edge fades */
+
+.bettergas-reviews-carousel::before,
+.bettergas-reviews-carousel::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:55px;
+  z-index:5;
+  pointer-events:none;
+}
+
+.bettergas-reviews-carousel::before{
+  left:0;
+
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,.95),
+    rgba(255,255,255,0)
+  );
+}
+
+.bettergas-reviews-carousel::after{
+  right:0;
+
+  background:linear-gradient(
+    270deg,
+    rgba(255,255,255,.95),
+    rgba(255,255,255,0)
+  );
+}
+
+
+/* ===============================
+   TRACK
+================================ */
+
+.reviews-track{
+  display:flex;
+  width:max-content;
+  will-change:transform;
+
+  animation:
+    reviewScroll 58s linear infinite;
+}
+
+.bettergas-reviews-carousel:hover .reviews-track{
+  animation-play-state:paused;
+}
+
+.reviews-set{
+  display:flex;
+  gap:15px;
+  padding-right:15px;
+  flex-shrink:0;
+}
+
+@keyframes reviewScroll{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+
+/* ===============================
+   CARD
+================================ */
+
+.review-card{
+  position:relative;
+
+  width:285px;
+  min-height:280px;
+
+  flex-shrink:0;
+
+  padding:26px;
+
+  display:flex;
+  flex-direction:column;
+
+  background:#FFFFFF;
+
+  border:1px solid #DFE5ED;
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease;
+}
+
+.review-card:hover{
+  transform:translateY(-5px);
+
+  border-color:rgba(29,39,86,.28);
+
+  box-shadow:
+    0 18px 45px rgba(4,34,78,.11);
+}
+
+
+/* amber top accent */
+
+.review-card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:26px;
+
+  width:38px;
+  height:3px;
+
+  background:#FFAB01;
+}
+
+
+/* ===============================
+   TOP
+================================ */
+
+.review-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:12px;
+
+  margin-bottom:22px;
+}
+
+.review-stars{
+  color:#FFAB01;
+
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+.google-label{
+  color:#1D2756;
+
+  font-size:8.5px;
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+
+/* ===============================
+   REVIEW BODY
+================================ */
+
+.review-text{
+  margin:0;
+
+  flex-grow:1;
+
+  color:#071B3A;
+
+  font-size:13px;
+  font-weight:500;
+  line-height:1.72;
+}
+
+
+/* ===============================
+   AUTHOR
+================================ */
+
+.review-author{
+  display:flex;
+  align-items:center;
+
+  gap:11px;
+
+  margin-top:26px;
+  padding-top:17px;
+
+  border-top:1px solid #E5EAF0;
+}
+
+.author-circle{
+  width:34px;
+  height:34px;
+
+  flex-shrink:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#EEF4FF;
+
+  color:#1D2756;
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.author-info strong{
+  display:block;
+
+  color:#071B3A;
+
+  font-size:10.5px;
+  font-weight:800;
+}
+
+.author-info span{
+  display:block;
+
+  margin-top:2px;
+
+  color:#7C8798;
+
+  font-size:8.5px;
+}
+
+
+/* ===============================
+   FEATURED NAVY CARDS
+================================ */
+
+.review-card.featured{
+  background:
+    linear-gradient(
+      145deg,
+      #1D2756,
+      #052B63
+    );
+
+  border-color:transparent;
+}
+
+.review-card.featured .review-text,
+.review-card.featured .author-info strong{
+  color:#FFFFFF;
+}
+
+.review-card.featured .author-info span{
+  color:rgba(255,255,255,.55);
+}
+
+.review-card.featured .review-author{
+  border-color:rgba(255,255,255,.15);
+}
+
+.review-card.featured .google-label{
+  color:#FFAB01;
+}
+
+.review-card.featured .author-circle{
+  background:rgba(255,255,255,.12);
+  color:#FFFFFF;
+}
+
+
+/* ===============================
+   MOBILE ONLY
+================================ */
+
+@media(max-width:700px){
+
+  html,
+  body{
+    width:100% !important;
+    max-width:100% !important;
+
+    height:auto !important;
+    min-height:0 !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    overflow:hidden !important;
+    overflow-x:hidden !important;
+    overflow-y:hidden !important;
+
+    overscroll-behavior:none !important;
+    overscroll-behavior-x:none !important;
+    overscroll-behavior-y:none !important;
+
+    -webkit-overflow-scrolling:auto !important;
+
+    scrollbar-width:none !important;
+    -ms-overflow-style:none !important;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar{
+    display:none !important;
+    width:0 !important;
+    height:0 !important;
+  }
+
+
+  .bettergas-reviews-carousel{
+    width:100%;
+    max-width:100%;
+
+    height:auto !important;
+    min-height:0 !important;
+
+    margin:0;
+    padding:6px 0 8px;
+
+    overflow:hidden !important;
+    overflow-x:hidden !important;
+    overflow-y:hidden !important;
+
+    overscroll-behavior:none !important;
+  }
+
+
+  .bettergas-reviews-carousel::before,
+  .bettergas-reviews-carousel::after{
+    width:18px;
+  }
+
+
+  .reviews-track{
+    width:max-content;
+
+    height:auto !important;
+    min-height:0 !important;
+
+    margin:0;
+    padding:0;
+
+    align-items:stretch;
+
+    animation-duration:48s;
+
+    overflow:visible !important;
+  }
+
+
+  .reviews-set{
+    height:auto !important;
+    min-height:0 !important;
+
+    gap:10px;
+    padding-right:10px;
+
+    margin:0;
+
+    align-items:stretch;
+
+    flex-shrink:0;
+  }
+
+
+  .review-card{
+    width:245px;
+
+    min-height:0 !important;
+    height:auto !important;
+
+    margin:0;
+    padding:18px;
+
+    overflow:hidden !important;
+    overflow-x:hidden !important;
+    overflow-y:hidden !important;
+
+    overscroll-behavior:none !important;
+  }
+
+
+  .review-card:hover{
+    transform:none;
+
+    border-color:#DFE5ED;
+
+    box-shadow:none;
+  }
+
+
+  .review-card.featured:hover{
+    border-color:transparent;
+  }
+
+
+  .review-card::before{
+    left:18px;
+
+    width:32px;
+    height:3px;
+  }
+
+
+  .review-top{
+    gap:8px;
+
+    margin-bottom:14px;
+  }
+
+
+  .review-stars{
+    font-size:11px;
+    letter-spacing:1.5px;
+  }
+
+
+  .google-label{
+    font-size:7.5px;
+  }
+
+
+  .review-text{
+    font-size:11px;
+    line-height:1.5;
+  }
+
+
+  .review-author{
+    gap:9px;
+
+    margin-top:18px;
+    padding-top:12px;
+  }
+
+
+  .author-circle{
+    width:30px;
+    height:30px;
+
+    font-size:8px;
+  }
+
+
+  .author-info strong{
+    font-size:9.5px;
+  }
+
+
+  .author-info span{
+    font-size:7.5px;
+  }
+
+}
+
+
+/* accessibility */
+
+@media(prefers-reduced-motion:reduce){
+
+  .reviews-track{
+    animation-play-state:paused;
+  }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<section class="bettergas-reviews-carousel">
+
+
+  <div class="reviews-track" id="reviewsTrack">
+
+
+    <div class="reviews-set" id="reviewsSet">
+
+
+      <!-- 01 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Impressed with the attention to detail and the finished work.
+          The project was completed within the agreed timeframe.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">JM</div>
+
+          <div class="author-info">
+            <strong>Josh Murillo</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 02 -->
+
+      <article class="review-card featured">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Thorough, knowledgeable and professional service.
+          The issue was dealt with promptly and everything was left tidy.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">MG</div>
+
+          <div class="author-info">
+            <strong>Mhamad Ghayad</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 03 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Brendan was punctual, skilled and efficient when resolving
+          the plumbing problem, with very clear communication throughout.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">JT</div>
+
+          <div class="author-info">
+            <strong>Official JTempz</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 04 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Help was available at short notice over the weekend
+          and the work was completed brilliantly.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">WS</div>
+
+          <div class="author-info">
+            <strong>William Stewart</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 05 -->
+
+      <article class="review-card featured">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Great service from Brendan, with proactive problem solving
+          and a reassuring, professional approach.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">E</div>
+
+          <div class="author-info">
+            <strong>Enrico</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 06 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Very professional and friendly service with an excellent
+          standard of work. Happy to recommend Better Gas.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">CG</div>
+
+          <div class="author-info">
+            <strong>Chris Gordon</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 07 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          The team installed a new boiler quickly and also resolved
+          a leak. A service they would happily use again.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">DO</div>
+
+          <div class="author-info">
+            <strong>Dionne Ower</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 08 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Straightforward, helpful service from a team that gets on
+          with the job efficiently.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">SM</div>
+
+          <div class="author-info">
+            <strong>Simon Mumford</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 09 -->
+
+      <article class="review-card featured">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Friendly, available and punctual throughout a boiler replacement,
+          with strong professionalism and good value.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">PM</div>
+
+          <div class="author-info">
+            <strong>Panita Mangkarudon</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 10 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          A perfect job and a company the customer would confidently recommend.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">CC</div>
+
+          <div class="author-info">
+            <strong>Charnelle Campbell</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 11 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          A positive experience with Better Gas and a job completed
+          to a standard worth recommending.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">AM</div>
+
+          <div class="author-info">
+            <strong>Alex Miha</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- 12 -->
+
+      <article class="review-card">
+
+        <div class="review-top">
+          <div class="review-stars">★★★★★</div>
+          <div class="google-label">Google Review</div>
+        </div>
+
+        <p class="review-text">
+          Excellent work and a straightforward positive experience
+          with the Better Gas team.
+        </p>
+
+        <div class="review-author">
+
+          <div class="author-circle">1C</div>
+
+          <div class="author-info">
+            <strong>1click Srl</strong>
+            <span>Google Customer</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+<script>
+
+const track = document.getElementById("reviewsTrack");
+const originalSet = document.getElementById("reviewsSet");
+
+/*
+  Clone the entire review set.
+  Two identical sequences create the seamless loop.
+*/
+
+const clonedSet = originalSet.cloneNode(true);
+
+clonedSet.removeAttribute("id");
+clonedSet.setAttribute("aria-hidden", "true");
+
+track.appendChild(clonedSet);
+
+</script>
+
+
+</body>
+</html>

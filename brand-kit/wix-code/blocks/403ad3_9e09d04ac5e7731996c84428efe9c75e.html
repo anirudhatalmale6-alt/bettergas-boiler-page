@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+
+  width:100%;
+  max-width:100%;
+
+  background:transparent;
+
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+
+/* GRID */
+
+.bettergas-plans{
+  width:100%;
+  max-width:1180px;
+
+  margin:auto;
+}
+
+.bettergas-plans-grid{
+  width:100%;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:14px;
+}
+
+
+/* CARD */
+
+.bettergas-plan-card{
+  position:relative;
+  overflow:hidden;
+
+  min-height:510px;
+
+  padding:31px 30px 28px;
+
+  display:flex;
+  flex-direction:column;
+
+  background:#FFFFFF;
+
+  border:1px solid #DCE3EC;
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease;
+}
+
+.bettergas-plan-card::after{
+  content:"";
+
+  position:absolute;
+
+  width:175px;
+  height:175px;
+
+  top:-100px;
+  right:-80px;
+
+  border-radius:50%;
+
+  background:#EEF5FF;
+}
+
+.bettergas-plan-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 20px 45px rgba(4,27,62,.08);
+}
+
+
+/* TOP */
+
+.bettergas-plan-top{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.bettergas-plan-number{
+  color:#1D2756;
+
+  font-size:9px;
+  font-weight:800;
+}
+
+.bettergas-plan-name{
+  color:#708097;
+
+  font-size:9px;
+  font-weight:800;
+
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+
+/* PRICE */
+
+.bettergas-plan-price{
+  position:relative;
+  z-index:2;
+
+  margin-top:55px;
+
+  display:flex;
+  align-items:flex-end;
+}
+
+.bettergas-currency{
+  margin:0 4px 9px 0;
+
+  color:#061A38;
+
+  font-size:17px;
+  font-weight:800;
+}
+
+.bettergas-plan-price strong{
+  color:#061A38;
+
+  font-size:49px;
+  font-weight:800;
+  line-height:.9;
+
+  letter-spacing:-.055em;
+}
+
+.bettergas-period{
+  margin:0 0 5px 8px;
+
+  color:#7A899C;
+
+  font-size:9px;
+  font-weight:700;
+}
+
+
+/* LINE */
+
+.bettergas-plan-line{
+  width:100%;
+  height:1px;
+
+  margin:28px 0 24px;
+
+  background:#DCE3EC;
+}
+
+
+/* FEATURES */
+
+.bettergas-plan-card ul{
+  position:relative;
+  z-index:2;
+
+  padding:0;
+  margin:0;
+
+  list-style:none;
+}
+
+.bettergas-plan-card li{
+  min-height:35px;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  color:#43546A;
+
+  font-size:10.5px;
+
+  border-bottom:1px solid #EDF1F5;
+}
+
+.bettergas-plan-card li span{
+  color:#1D2756;
+
+  font-size:10px;
+  font-weight:800;
+}
+
+
+/* BOTTOM */
+
+.bettergas-plan-bottom{
+  position:relative;
+  z-index:2;
+
+  margin-top:auto;
+
+  padding-top:32px;
+}
+
+.bettergas-plan-button{
+  width:100%;
+  min-height:50px;
+
+  padding:0 18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:#1D2756;
+
+  color:#FFFFFF;
+
+  font-size:10px;
+  font-weight:800;
+
+  text-decoration:none;
+
+  transition:.25s ease;
+}
+
+.bettergas-plan-button span{
+  font-size:15px;
+
+  transition:.25s ease;
+}
+
+.bettergas-plan-button:hover{
+  background:#061A38;
+}
+
+.bettergas-plan-button:hover span{
+  transform:translateX(4px);
+}
+
+.bettergas-plan-bottom p{
+  margin:13px 0 0;
+
+  color:#8A98AA;
+
+  font-size:8px;
+  font-weight:700;
+
+  text-align:center;
+
+  letter-spacing:.04em;
+}
+
+
+/* FEATURED */
+
+.bettergas-plan-featured{
+  background:
+    linear-gradient(
+      145deg,
+      #1D2756 0%,
+      #073A83 56%,
+      #061A38 100%
+    );
+
+  border-color:#1D2756;
+}
+
+.bettergas-plan-featured::after{
+  background:rgba(255,255,255,.06);
+
+  box-shadow:
+    0 0 0 40px rgba(255,255,255,.015),
+    0 0 0 80px rgba(255,255,255,.01);
+}
+
+.bettergas-plan-featured .bettergas-plan-number{
+  color:#FFAB01;
+}
+
+.bettergas-plan-featured .bettergas-plan-name,
+.bettergas-plan-featured .bettergas-period{
+  color:rgba(255,255,255,.55);
+}
+
+.bettergas-plan-featured .bettergas-currency,
+.bettergas-plan-featured .bettergas-plan-price strong{
+  color:#FFFFFF;
+}
+
+.bettergas-plan-featured .bettergas-plan-line{
+  background:rgba(255,255,255,.15);
+}
+
+.bettergas-plan-featured li{
+  color:rgba(255,255,255,.76);
+
+  border-bottom-color:rgba(255,255,255,.11);
+}
+
+.bettergas-plan-featured li span{
+  color:#FFAB01;
+}
+
+.bettergas-plan-featured .bettergas-plan-button{
+  background:#FFAB01;
+
+  color:#111111;
+}
+
+.bettergas-plan-featured .bettergas-plan-button:hover{
+  background:#FFB82B;
+}
+
+.bettergas-plan-featured .bettergas-plan-bottom p{
+  color:rgba(255,255,255,.52);
+}
+
+
+/* NOTE */
+
+.bettergas-plan-note{
+  margin-top:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:9px;
+}
+
+.bettergas-plan-note span{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:#FFAB01;
+}
+
+.bettergas-plan-note p{
+  margin:0;
+
+  color:#748398;
+
+  font-size:9px;
+  font-weight:600;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+  .bettergas-plans-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bettergas-plan-card{
+    min-height:460px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  .bettergas-plan-card{
+    min-height:430px;
+
+    padding:26px 23px;
+  }
+
+  .bettergas-plan-price{
+    margin-top:40px;
+  }
+
+  .bettergas-plan-price strong{
+    font-size:43px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="bettergas-plans">
+
+  <div class="bettergas-plans-grid">
+
+
+    <!-- BASIC -->
+    <article class="bettergas-plan-card">
+
+      <div class="bettergas-plan-top">
+
+        <span class="bettergas-plan-number">
+          01
+        </span>
+
+        <span class="bettergas-plan-name">
+          Basic
+        </span>
+
+      </div>
+
+
+      <div class="bettergas-plan-price">
+
+        <span class="bettergas-currency">£</span>
+
+        <strong>12.99</strong>
+
+        <span class="bettergas-period">
+          / month
+        </span>
+
+      </div>
+
+
+      <div class="bettergas-plan-line"></div>
+
+
+      <ul>
+
+        <li>
+          <span>✓</span>
+          Annual Boiler Service
+        </li>
+
+        <li>
+          <span>✓</span>
+          Gas Boiler &amp; Controls
+        </li>
+
+      </ul>
+
+
+      <div class="bettergas-plan-bottom">
+
+        <a
+          href="https://buy.stripe.com/3cIcN793g44V3eW15jcMM00"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bettergas-plan-button"
+        >
+          Subscribe
+          <span>→</span>
+        </a>
+
+        <p>
+          Apple Pay · Google Pay · Card
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- EXTRA -->
+    <article class="bettergas-plan-card bettergas-plan-featured">
+
+      <div class="bettergas-plan-top">
+
+        <span class="bettergas-plan-number">
+          02
+        </span>
+
+        <span class="bettergas-plan-name">
+          Extra
+        </span>
+
+      </div>
+
+
+      <div class="bettergas-plan-price">
+
+        <span class="bettergas-currency">£</span>
+
+        <strong>19.99</strong>
+
+        <span class="bettergas-period">
+          / month
+        </span>
+
+      </div>
+
+
+      <div class="bettergas-plan-line"></div>
+
+
+      <ul>
+
+        <li>
+          <span>✓</span>
+          Annual Boiler Service
+        </li>
+
+        <li>
+          <span>✓</span>
+          Gas Boiler &amp; Controls
+        </li>
+
+        <li>
+          <span>✓</span>
+          Central Heating
+        </li>
+
+      </ul>
+
+
+      <div class="bettergas-plan-bottom">
+
+        <a
+          href="https://buy.stripe.com/fZu5kFcfscBraHoaFTcMM01"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bettergas-plan-button"
+        >
+          Subscribe
+          <span>→</span>
+        </a>
+
+        <p>
+          Apple Pay · Google Pay · Card
+        </p>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- EXCLUSIVE -->
+    <article class="bettergas-plan-card">
+
+      <div class="bettergas-plan-top">
+
+        <span class="bettergas-plan-number">
+          03
+        </span>
+
+        <span class="bettergas-plan-name">
+          Exclusive
+        </span>
+
+      </div>
+
+
+      <div class="bettergas-plan-price">
+
+        <span class="bettergas-currency">£</span>
+
+        <strong>24.99</strong>
+
+        <span class="bettergas-period">
+          / month
+        </span>
+
+      </div>
+
+
+      <div class="bettergas-plan-line"></div>
+
+
+      <ul>
+
+        <li>
+          <span>✓</span>
+          Annual Boiler Service
+        </li>
+
+        <li>
+          <span>✓</span>
+          Gas Boiler &amp; Controls
+        </li>
+
+        <li>
+          <span>✓</span>
+          Central Heating
+        </li>
+
+        <li>
+          <span>✓</span>
+          Plumbing &amp; Drains
+        </li>
+
+        <li>
+          <span>✓</span>
+          Home Electrics
+        </li>
+
+      </ul>
+
+
+      <div class="bettergas-plan-bottom">
+
+        <a
+          href="https://buy.stripe.com/28E3cx0wK9pf7vc3drcMM02"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bettergas-plan-button"
+        >
+          Subscribe
+          <span>→</span>
+        </a>
+
+        <p>
+          Apple Pay · Google Pay · Card
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <div class="bettergas-plan-note">
+
+    <span></span>
+
+    <p>
+      Non-fixed-term contract. Cancel at any time.
+    </p>
+
+  </div>
+
+</section>
+
+</body>
+</html>

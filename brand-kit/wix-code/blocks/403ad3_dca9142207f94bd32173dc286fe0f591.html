@@ -1,0 +1,118 @@
+<div class="bettergas-service-trio">
+
+  <div class="bettergas-service-mini">
+    <h3>Gas</h3>
+    <p>Professional Engineering</p>
+  </div>
+
+  <div class="bettergas-service-mini">
+    <h3>Heating</h3>
+    <p>Complete System Knowledge</p>
+  </div>
+
+  <div class="bettergas-service-mini">
+    <h3>Plumbing</h3>
+    <p>Repairs &amp; Installations</p>
+  </div>
+
+</div>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: transparent;
+    font-family: "Manrope", Arial, sans-serif;
+  }
+
+  .bettergas-service-trio {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #DCE3EC;
+    border-bottom: 1px solid #DCE3EC;
+
+    background: transparent;
+  }
+
+  .bettergas-service-mini {
+    min-height: 94px;
+
+    padding: 20px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-right: 1px solid #DCE3EC;
+
+    transition: background-color 0.25s ease;
+  }
+
+  .bettergas-service-mini:last-child {
+    border-right: none;
+  }
+
+  .bettergas-service-mini:hover {
+    background: rgba(29, 39, 86, 0.035);
+  }
+
+  .bettergas-service-mini h3 {
+    margin: 0 0 8px;
+
+    color: #1D2756;
+
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.1;
+
+    letter-spacing: -0.025em;
+  }
+
+  .bettergas-service-mini p {
+    margin: 0;
+
+    color: #7B8CA3;
+
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 650px) {
+    .bettergas-service-trio {
+      grid-template-columns: 1fr;
+    }
+
+    .bettergas-service-mini {
+      min-height: 72px;
+      padding: 15px 18px;
+
+      border-right: none;
+      border-bottom: 1px solid #DCE3EC;
+    }
+
+    .bettergas-service-mini:last-child {
+      border-bottom: none;
+    }
+
+    .bettergas-service-mini h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .bettergas-service-mini p {
+      font-size: 7.5px;
+    }
+  }
+</style>

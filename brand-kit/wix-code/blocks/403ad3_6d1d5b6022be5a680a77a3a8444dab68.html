@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    background: transparent;
+
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+
+    overscroll-behavior: none !important;
+    overscroll-behavior-x: none !important;
+    overscroll-behavior-y: none !important;
+
+    -webkit-overflow-scrolling: auto !important;
+
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  body {
+    font-family: "Manrope", Arial, sans-serif;
+  }
+
+  .bettergas-callout {
+    width: 100%;
+    background: transparent;
+  }
+
+  .bettergas-callout-inner {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+
+    min-height: 210px;
+
+    padding: 38px 44px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+      linear-gradient(
+        110deg,
+        #1D2756 0%,
+        #073476 55%,
+        #041B3E 100%
+      );
+
+    color: #FFFFFF;
+  }
+
+  .bettergas-callout-inner::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 6px;
+    height: 100%;
+
+    background: #FFAB01;
+  }
+
+  .bettergas-callout-inner::after {
+    content: "";
+
+    position: absolute;
+    right: -70px;
+    top: -90px;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+      0 0 0 45px rgba(255,255,255,0.02),
+      0 0 0 90px rgba(255,255,255,0.015);
+  }
+
+  .bettergas-callout-copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  .bettergas-callout-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #FFAB01;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+
+  .bettergas-callout-copy h2 {
+    margin: 0 0 10px;
+
+    max-width: 700px;
+
+    color: #FFFFFF;
+
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+  }
+
+  .bettergas-callout-copy p {
+    margin: 0;
+
+    max-width: 700px;
+
+    color: rgba(255,255,255,0.66);
+
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .bettergas-callout-button {
+    position: relative;
+    z-index: 2;
+
+    min-height: 50px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    background: #FFAB01;
+    color: #111111;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .bettergas-callout-button:hover {
+    background: #FFB82B;
+    transform: translateY(-2px);
+  }
+
+  .bettergas-callout-button span {
+    font-size: 15px;
+    transition: transform 0.25s ease;
+  }
+
+  .bettergas-callout-button:hover span {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 750px) {
+
+    .bettergas-callout-inner {
+      grid-template-columns: 1fr;
+
+      min-height: auto;
+
+      padding: 30px 24px;
+      gap: 24px;
+    }
+
+    .bettergas-callout-copy h2 {
+      font-size: 24px;
+    }
+
+    .bettergas-callout-button {
+      width: fit-content;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<section class="bettergas-callout">
+
+  <div class="bettergas-callout-inner">
+
+    <div class="bettergas-callout-copy">
+
+      <span class="bettergas-callout-label">
+        Urgent Boiler Support
+      </span>
+
+      <h2>
+        Boiler Broken Down or No Hot Water?
+      </h2>
+
+      <p>
+        If your boiler has stopped working, is displaying a fault code
+        or you suddenly have no heating or hot water, Better Gas can
+        diagnose the issue and recommend the right repair.
+      </p>
+
+    </div>
+
+    <a
+      href="tel:08000599951"
+      class="bettergas-callout-button"
+    >
+      Call 0800 059 9951
+      <span>→</span>
+    </a>
+
+  </div>
+
+</section>
+
+</body>
+</html>

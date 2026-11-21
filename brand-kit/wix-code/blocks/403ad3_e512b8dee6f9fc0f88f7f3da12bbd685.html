@@ -1,0 +1,187 @@
+<section class="bettergas-landlord-callout">
+
+  <div class="bettergas-landlord-callout-inner">
+
+    <div>
+
+      <span class="bettergas-landlord-label">
+        Landlord Support
+      </span>
+
+      <h2>
+        Not Sure Which Cover Plan Is Right?
+      </h2>
+
+      <p>
+        Speak to Better Gas before subscribing and we can help
+        explain the differences between Basic, Extra and Exclusive.
+      </p>
+
+    </div>
+
+
+    <a href="tel:08000599951">
+
+      Call 0800 059 9951
+
+      <span>→</span>
+
+    </a>
+
+  </div>
+
+</section>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:transparent;
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-landlord-callout{
+  width:100%;
+}
+
+.bettergas-landlord-callout-inner{
+  width:100%;
+  max-width:1180px;
+
+  min-height:210px;
+
+  margin:auto;
+  padding:38px 44px;
+
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:40px;
+
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      110deg,
+      #1D2756,
+      #073476 55%,
+      #041B3E
+    );
+}
+
+.bettergas-landlord-callout-inner::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:6px;
+  height:100%;
+
+  background:#FFAB01;
+}
+
+.bettergas-landlord-callout-inner::after{
+  content:"";
+
+  position:absolute;
+
+  right:-70px;
+  top:-90px;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 0 0 45px rgba(255,255,255,.02),
+    0 0 0 90px rgba(255,255,255,.015);
+}
+
+.bettergas-landlord-label{
+  display:block;
+
+  margin-bottom:10px;
+
+  color:#FFAB01;
+
+  font-size:9px;
+  font-weight:800;
+
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.bettergas-landlord-callout h2{
+  margin:0 0 10px;
+
+  color:#FFFFFF;
+
+  font-size:30px;
+  font-weight:800;
+
+  letter-spacing:-.035em;
+}
+
+.bettergas-landlord-callout p{
+  max-width:680px;
+  margin:0;
+
+  color:rgba(255,255,255,.67);
+
+  font-size:12px;
+  line-height:1.7;
+}
+
+.bettergas-landlord-callout a{
+  position:relative;
+  z-index:2;
+
+  min-height:50px;
+
+  padding:0 22px;
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  background:#FFAB01;
+
+  color:#111;
+
+  font-size:10px;
+  font-weight:800;
+
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.bettergas-landlord-callout a span{
+  font-size:16px;
+}
+
+@media(max-width:750px){
+
+  .bettergas-landlord-callout-inner{
+    grid-template-columns:1fr;
+
+    padding:30px 24px;
+  }
+
+  .bettergas-landlord-callout h2{
+    font-size:24px;
+  }
+
+  .bettergas-landlord-callout a{
+    width:fit-content;
+  }
+}
+</style>

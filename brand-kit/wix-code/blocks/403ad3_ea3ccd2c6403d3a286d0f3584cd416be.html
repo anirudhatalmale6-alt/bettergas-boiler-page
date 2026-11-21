@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+
+  width:100%;
+  max-width:100%;
+
+  background:transparent;
+
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-subservices{
+  width:100%;
+  max-width:1180px;
+  margin:auto;
+
+  border-top:1px solid #DCE3EC;
+}
+
+.bettergas-subservice{
+  min-height:122px;
+
+  display:grid;
+  grid-template-columns:70px 1fr 46px;
+  align-items:center;
+  gap:28px;
+
+  padding:22px 0;
+
+  border-bottom:1px solid #DCE3EC;
+
+  transition:.25s ease;
+}
+
+.bettergas-subservice:hover{
+  padding-left:16px;
+  padding-right:16px;
+
+  background:rgba(29,39,86,.035);
+}
+
+.bettergas-subservice > span{
+  color:#1D2756;
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.bettergas-subservice h3{
+  margin:0 0 7px;
+
+  color:#041B3E;
+
+  font-size:21px;
+  letter-spacing:-.03em;
+}
+
+.bettergas-subservice p{
+  margin:0;
+
+  color:#708097;
+
+  font-size:11.5px;
+  line-height:1.65;
+}
+
+.bettergas-subservice a{
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #D8E0EA;
+
+  color:#1D2756;
+
+  text-decoration:none;
+
+  transition:.25s ease;
+}
+
+.bettergas-subservice:hover a{
+  background:#1D2756;
+  border-color:#1D2756;
+  color:#fff;
+
+  transform:translateX(3px);
+}
+
+
+/* ==========================
+   ORIGINAL MOBILE LAYOUT
+========================== */
+
+@media(max-width:700px){
+
+  .bettergas-subservice{
+    min-height:105px;
+
+    grid-template-columns:32px 1fr 38px;
+    gap:13px;
+
+    padding:18px 0;
+  }
+
+  .bettergas-subservice:hover{
+    padding-left:8px;
+    padding-right:8px;
+  }
+
+  .bettergas-subservice > span{
+    font-size:10px;
+  }
+
+  .bettergas-subservice h3{
+    margin:0 0 7px;
+
+    font-size:16px;
+  }
+
+  .bettergas-subservice p{
+    font-size:10px;
+  }
+
+  .bettergas-subservice a{
+    width:36px;
+    height:36px;
+
+    font-size:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-subservices">
+
+  <div class="bettergas-subservice">
+    <span>01</span>
+
+    <div>
+      <h3>Gas Safety Certificates</h3>
+      <p>
+        Professional gas safety checks and certification for landlords,
+        homeowners and managed properties.
+      </p>
+    </div>
+
+    <a href="#" aria-label="Gas Safety Certificates">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>02</span>
+
+    <div>
+      <h3>Gas Cooker Installation</h3>
+      <p>
+        Safe installation and connection of gas cookers, hobs and
+        compatible cooking appliances.
+      </p>
+    </div>
+
+    <a href="#" aria-label="Gas Cooker Installation">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>03</span>
+
+    <div>
+      <h3>Gas Cooker Servicing &amp; Repairs</h3>
+      <p>
+        Servicing, fault diagnosis and repairs for gas cookers
+        and cooking appliances.
+      </p>
+    </div>
+
+    <a href="#" aria-label="Gas Cooker Servicing and Repairs">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>04</span>
+
+    <div>
+      <h3>Gas Fire Installation</h3>
+      <p>
+        Professional installation of suitable gas fires with the
+        necessary safety and performance checks.
+      </p>
+    </div>
+
+    <a href="#" aria-label="Gas Fire Installation">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>05</span>
+
+    <div>
+      <h3>Gas Fire Servicing &amp; Repairs</h3>
+      <p>
+        Inspection, servicing and fault diagnosis to help keep gas fires
+        operating safely and reliably.
+      </p>
+    </div>
+
+    <a href="#" aria-label="Gas Fire Servicing and Repairs">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>06</span>
+
+    <div>
+      <h3>Gas Leak Detection &amp; Gas Repairs</h3>
+      <p>
+        Professional investigation of suspected gas faults, pipework
+        issues and appliance-related problems.
+      </p>
+    </div>
+
+    <a href="#" aria-label="Gas Leak Detection and Gas Repairs">→</a>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: transparent;
+    font-family: "Manrope", Arial, sans-serif;
+  }
+
+  .bettergas-stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background: #FFFFFF;
+    border: 1px solid #E0E5EC;
+  }
+
+  .bettergas-stat {
+    position: relative;
+
+    min-height: 125px;
+    padding: 34px 34px 24px;
+
+    background: #FFFFFF;
+    border-right: 1px solid #E0E5EC;
+  }
+
+  .bettergas-stat:last-child {
+    border-right: none;
+  }
+
+  .bettergas-stat::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 34px;
+
+    width: 45px;
+    height: 3px;
+
+    background: #FFAB01;
+  }
+
+  .bettergas-stat-title {
+    margin: 0 0 18px;
+
+    color: #1D2756;
+
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.05;
+
+    letter-spacing: -0.03em;
+  }
+
+  .bettergas-stat-label {
+    margin: 0;
+
+    color: #748095;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .bettergas-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bettergas-stat:nth-child(2) {
+      border-right: none;
+    }
+
+    .bettergas-stat:nth-child(1),
+    .bettergas-stat:nth-child(2) {
+      border-bottom: 1px solid #E0E5EC;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .bettergas-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .bettergas-stat {
+      min-height: 105px;
+      padding: 28px 24px 20px;
+
+      border-right: none;
+      border-bottom: 1px solid #E0E5EC;
+    }
+
+    .bettergas-stat:last-child {
+      border-bottom: none;
+    }
+
+    .bettergas-stat::before {
+      left: 24px;
+      width: 38px;
+    }
+
+    .bettergas-stat-title {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .bettergas-stat-label {
+      font-size: 11px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-stats">
+
+  <div class="bettergas-stat">
+    <h3 class="bettergas-stat-title">24 / 7</h3>
+    <p class="bettergas-stat-label">Emergency Availability</p>
+  </div>
+
+  <div class="bettergas-stat">
+    <h3 class="bettergas-stat-title">8 Years</h3>
+    <p class="bettergas-stat-label">Established Experience</p>
+  </div>
+
+  <div class="bettergas-stat">
+    <h3 class="bettergas-stat-title">Chelsea & Kensington</h3>
+    <p class="bettergas-stat-label">London Based</p>
+  </div>
+
+  <div class="bettergas-stat">
+    <h3 class="bettergas-stat-title">Domestic + Commercial</h3>
+    <p class="bettergas-stat-label">Qualified Engineering</p>
+  </div>
+
+</div>
+
+</body>
+</html>

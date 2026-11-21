@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+
+  width:100%;
+  max-width:100%;
+
+  background:transparent;
+
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-service-intro{
+  width:100%;
+  padding:28px 20px 42px;
+  background:transparent;
+}
+
+.bettergas-service-intro-wrap{
+  width:min(760px,100%);
+  margin:auto;
+}
+
+.bettergas-service-intro-image-wrap{
+  position:relative;
+  padding:0 18px 18px 0;
+}
+
+.bettergas-service-intro-image{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  height:430px;
+
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+
+.bettergas-service-intro-accent{
+  position:absolute;
+  z-index:1;
+
+  right:0;
+  bottom:0;
+
+  width:52%;
+  height:47%;
+
+  background:#FFAB01;
+}
+
+.bettergas-service-intro-panel{
+  position:absolute;
+  z-index:4;
+
+  left:16px;
+  bottom:28px;
+
+  width:min(470px,calc(100% - 64px));
+
+  padding:28px 30px;
+
+  background:#1D2756;
+  color:#fff;
+
+  box-shadow:0 18px 45px rgba(0,35,90,.14);
+}
+
+.bettergas-service-intro-eyebrow{
+  display:block;
+
+  margin-bottom:13px;
+
+  color:#FFAB01;
+
+  font-size:10px;
+  font-weight:800;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.bettergas-service-intro-panel h2{
+  margin:0 0 11px;
+
+  color:#fff;
+
+  font-size:27px;
+  font-weight:800;
+  line-height:1.08;
+
+  letter-spacing:-.035em;
+}
+
+.bettergas-service-intro-panel p{
+  margin:0;
+
+  color:rgba(255,255,255,.76);
+
+  font-size:12px;
+  line-height:1.7;
+}
+
+@media(max-width:700px){
+
+  .bettergas-service-intro{
+    padding:20px 14px 0;
+  }
+
+  .bettergas-service-intro-image-wrap{
+    padding:0 10px 10px 0;
+  }
+
+  .bettergas-service-intro-image{
+    height:340px;
+  }
+
+  .bettergas-service-intro-accent{
+    width:58%;
+    height:42%;
+  }
+
+  .bettergas-service-intro-panel{
+    position:relative;
+
+    left:0;
+    bottom:auto;
+
+    width:calc(100% - 28px);
+
+    margin:-58px 0 0 14px;
+    padding:23px 22px;
+  }
+
+  .bettergas-service-intro-panel h2{
+    font-size:22px;
+  }
+
+  .bettergas-service-intro-panel p{
+    font-size:11px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-service-intro">
+
+  <div class="bettergas-service-intro-wrap">
+
+    <div class="bettergas-service-intro-image-wrap">
+
+      <img
+        class="bettergas-service-intro-image"
+        src="https://static.wixstatic.com/media/403ad3_8423dcfdbe9f4f5cbf531bcc0d1d7023~mv2.webp"
+        alt="Better Gas commercial catering gas services in London"
+      >
+
+      <div class="bettergas-service-intro-accent"></div>
+
+      <div class="bettergas-service-intro-panel">
+
+        <span class="bettergas-service-intro-eyebrow">
+          Catering Gas Expertise
+        </span>
+
+        <h2>
+          Commercial Catering Gas Expertise Across London
+        </h2>
+
+        <p>
+          From commercial kitchen appliance installations and servicing
+          to gas safety and equipment repairs, Better Gas supports
+          professional catering environments across London.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

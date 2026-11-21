@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    background: transparent;
+
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+
+    overscroll-behavior: none !important;
+    overscroll-behavior-x: none !important;
+    overscroll-behavior-y: none !important;
+
+    -webkit-overflow-scrolling: auto !important;
+
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  body {
+    font-family: "Manrope", Arial, sans-serif;
+  }
+
+  .bettergas-benefits {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    background: transparent;
+
+    border-top: 1px solid #DDE3EA;
+    border-left: 1px solid #DDE3EA;
+  }
+
+  .benefit-card {
+    min-height: 185px;
+
+    padding: 25px 28px 22px;
+
+    background: transparent;
+
+    border-right: 1px solid #DDE3EA;
+    border-bottom: 1px solid #DDE3EA;
+
+    transition:
+      background-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .benefit-card:hover {
+    background: rgba(29, 39, 86, 0.025);
+  }
+
+  .benefit-number {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 34px;
+
+    background: #EEF4FF;
+    color: #1D2756;
+
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .benefit-card:nth-child(even) .benefit-number {
+    background: #FFF3D9;
+    color: #C87900;
+  }
+
+  .benefit-title {
+    margin: 0 0 8px;
+
+    color: #071B3A;
+
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.25;
+
+    letter-spacing: -0.025em;
+  }
+
+  .benefit-text {
+    margin: 0;
+
+    max-width: 300px;
+
+    color: #6E798C;
+
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+
+
+  /* ==========================
+     ORIGINAL MOBILE LAYOUT
+  ========================== */
+
+  @media (max-width: 650px) {
+
+    .bettergas-benefits {
+      grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+      min-height: 155px;
+      padding: 22px;
+    }
+
+    .benefit-number {
+      width: 38px;
+      height: 38px;
+
+      margin-bottom: 24px;
+
+      font-size: 11px;
+    }
+
+    .benefit-title {
+      font-size: 16px;
+    }
+
+    .benefit-text {
+      max-width: none;
+
+      font-size: 11px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-benefits">
+
+  <div class="benefit-card">
+
+    <div class="benefit-number">
+      01
+    </div>
+
+    <h3 class="benefit-title">
+      Fast London Response
+    </h3>
+
+    <p class="benefit-text">
+      Based in Islington and positioned to respond efficiently across London.
+    </p>
+
+  </div>
+
+
+  <div class="benefit-card">
+
+    <div class="benefit-number">
+      02
+    </div>
+
+    <h3 class="benefit-title">
+      Fair &amp; Transparent Pricing
+    </h3>
+
+    <p class="benefit-text">
+      Straightforward advice and sensible pricing without unnecessary work or confusing recommendations.
+    </p>
+
+  </div>
+
+
+  <div class="benefit-card">
+
+    <div class="benefit-number">
+      03
+    </div>
+
+    <h3 class="benefit-title">
+      Domestic &amp; Commercial
+    </h3>
+
+    <p class="benefit-text">
+      Professional engineering for homes, rental portfolios and commercial premises.
+    </p>
+
+  </div>
+
+
+  <div class="benefit-card">
+
+    <div class="benefit-number">
+      04
+    </div>
+
+    <h3 class="benefit-title">
+      Qualified Engineering
+    </h3>
+
+    <p class="benefit-text">
+      Gas, plumbing and heating work completed with safety and compliance in mind.
+    </p>
+
+  </div>
+
+
+  <div class="benefit-card">
+
+    <div class="benefit-number">
+      05
+    </div>
+
+    <h3 class="benefit-title">
+      Specialist Heating Knowledge
+    </h3>
+
+    <p class="benefit-text">
+      Expertise across HIUs, commercial heating, controls, cylinders and heat pumps.
+    </p>
+
+  </div>
+
+
+  <div class="benefit-card">
+
+    <div class="benefit-number">
+      06
+    </div>
+
+    <h3 class="benefit-title">
+      Support When You Need It
+    </h3>
+
+    <p class="benefit-text">
+      Available for both planned engineering work and urgent plumbing or heating problems.
+    </p>
+
+  </div>
+
+</div>
+
+</body>
+</html>

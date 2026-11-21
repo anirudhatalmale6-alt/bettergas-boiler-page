@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+
+  width:100%;
+  max-width:100%;
+
+  background:transparent;
+
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-cover-benefits{
+  width:100%;
+  max-width:1180px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  border-top:1px solid #DCE3EC;
+  border-left:1px solid #DCE3EC;
+}
+
+.bettergas-cover-benefits article{
+  min-height:215px;
+
+  padding:28px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+  background:#fff;
+
+  border-right:1px solid #DCE3EC;
+  border-bottom:1px solid #DCE3EC;
+}
+
+.bettergas-cover-benefits article > span{
+  color:#1D2756;
+
+  font-size:9px;
+  font-weight:800;
+}
+
+.bettergas-cover-benefits h3{
+  margin:0 0 10px;
+
+  color:#061A38;
+
+  font-size:20px;
+  font-weight:800;
+
+  letter-spacing:-.03em;
+}
+
+.bettergas-cover-benefits p{
+  margin:0;
+
+  color:#708097;
+
+  font-size:10.5px;
+  line-height:1.7;
+}
+
+@media(max-width:700px){
+
+  .bettergas-cover-benefits{
+    grid-template-columns:1fr;
+  }
+
+  .bettergas-cover-benefits article{
+    min-height:145px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-cover-benefits">
+
+  <article>
+    <span>01</span>
+
+    <div>
+      <h3>Annual Boiler Service</h3>
+      <p>
+        Routine boiler servicing is included across all three
+        landlord cover plans.
+      </p>
+    </div>
+  </article>
+
+
+  <article>
+    <span>02</span>
+
+    <div>
+      <h3>Property System Support</h3>
+      <p>
+        Higher plans extend support across heating, plumbing,
+        drains and home electrics.
+      </p>
+    </div>
+  </article>
+
+
+  <article>
+    <span>03</span>
+
+    <div>
+      <h3>Flexible Monthly Cover</h3>
+      <p>
+        Non-fixed-term monthly plans with the option to cancel
+        at any time.
+      </p>
+    </div>
+  </article>
+
+</div>
+
+</body>
+</html>

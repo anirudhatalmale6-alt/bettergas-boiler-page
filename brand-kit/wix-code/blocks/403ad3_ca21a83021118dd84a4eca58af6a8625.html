@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  max-width: 100%;
+
+  background: transparent;
+
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+
+  overscroll-behavior: none !important;
+  overscroll-behavior-x: none !important;
+  overscroll-behavior-y: none !important;
+
+  -webkit-overflow-scrolling: auto !important;
+
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+body {
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.bettergas-subservices {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  background: transparent;
+
+  border-top: 1px solid #DCE3EC;
+}
+
+.bettergas-subservice {
+  position: relative;
+
+  min-height: 122px;
+
+  display: grid;
+  grid-template-columns: 70px 1fr 46px;
+  align-items: center;
+  gap: 28px;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid #DCE3EC;
+
+  transition:
+    background-color 0.25s ease,
+    padding 0.25s ease;
+}
+
+.bettergas-subservice:hover {
+  padding-left: 16px;
+  padding-right: 16px;
+
+  background: rgba(29, 39, 86, 0.035);
+}
+
+.bettergas-sub-number {
+  color: #1D2756;
+
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.04em;
+}
+
+.bettergas-sub-copy h3 {
+  margin: 0 0 7px;
+
+  color: #041B3E;
+
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+}
+
+.bettergas-sub-copy p {
+  margin: 0;
+
+  max-width: 780px;
+
+  color: #708097;
+
+  font-size: 11.5px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.bettergas-sub-arrow {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #D8E0EA;
+
+  color: #1D2756;
+
+  font-size: 18px;
+  line-height: 1;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.bettergas-subservice:hover .bettergas-sub-arrow {
+  background: #1D2756;
+  border-color: #1D2756;
+  color: #FFFFFF;
+
+  transform: translateX(3px);
+}
+
+
+/* ==========================
+   ORIGINAL MOBILE LAYOUT
+========================== */
+
+@media (max-width: 700px) {
+
+  .bettergas-subservice {
+    min-height: 105px;
+
+    grid-template-columns: 32px 1fr 38px;
+    gap: 13px;
+
+    padding: 18px 0;
+  }
+
+  .bettergas-subservice:hover {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .bettergas-sub-number {
+    font-size: 10px;
+  }
+
+  .bettergas-sub-copy h3 {
+    margin: 0 0 7px;
+
+    font-size: 16px;
+  }
+
+  .bettergas-sub-copy p {
+    font-size: 10px;
+  }
+
+  .bettergas-sub-arrow {
+    width: 36px;
+    height: 36px;
+
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-subservices">
+
+  <div class="bettergas-subservice">
+    <div class="bettergas-sub-number">01</div>
+
+    <div class="bettergas-sub-copy">
+      <h3>Gas Boiler Installation</h3>
+      <p>Professional installation of new gas boilers for homes, rental properties and commercial premises.</p>
+    </div>
+
+    <a href="#" class="bettergas-sub-arrow" aria-label="Gas Boiler Installation">
+      →
+    </a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <div class="bettergas-sub-number">02</div>
+
+    <div class="bettergas-sub-copy">
+      <h3>Boiler Replacement &amp; Upgrades</h3>
+      <p>Replace older or inefficient boilers with modern systems suited to your heating and hot water requirements.</p>
+    </div>
+
+    <a href="#" class="bettergas-sub-arrow" aria-label="Boiler Replacement and Upgrades">
+      →
+    </a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <div class="bettergas-sub-number">03</div>
+
+    <div class="bettergas-sub-copy">
+      <h3>Boiler Servicing</h3>
+      <p>Routine boiler servicing to help maintain safe operation, efficiency and long-term reliability.</p>
+    </div>
+
+    <a href="#" class="bettergas-sub-arrow" aria-label="Boiler Servicing">
+      →
+    </a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <div class="bettergas-sub-number">04</div>
+
+    <div class="bettergas-sub-copy">
+      <h3>Boiler Repairs</h3>
+      <p>Professional diagnosis and repair of boiler faults, heating issues and hot water problems.</p>
+    </div>
+
+    <a href="#" class="bettergas-sub-arrow" aria-label="Boiler Repairs">
+      →
+    </a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <div class="bettergas-sub-number">05</div>
+
+    <div class="bettergas-sub-copy">
+      <h3>Boiler Breakdown &amp; Fault Finding</h3>
+      <p>Accurate fault diagnosis for boilers that have stopped working, developed errors or become unreliable.</p>
+    </div>
+
+    <a href="#" class="bettergas-sub-arrow" aria-label="Boiler Breakdown and Fault Finding">
+      →
+    </a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <div class="bettergas-sub-number">06</div>
+
+    <div class="bettergas-sub-copy">
+      <h3>Boiler Controls &amp; Thermostats</h3>
+      <p>Installation and repair of heating controls, programmers, thermostats and smart heating systems.</p>
+    </div>
+
+    <a href="#" class="bettergas-sub-arrow" aria-label="Boiler Controls and Thermostats">
+      →
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>

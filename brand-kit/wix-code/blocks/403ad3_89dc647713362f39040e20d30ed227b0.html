@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+
+  width:100%;
+  max-width:100%;
+
+  background:transparent;
+
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-subservices{
+  width:100%;
+  max-width:1180px;
+  margin:auto;
+
+  border-top:1px solid #DCE3EC;
+}
+
+.bettergas-subservice{
+  min-height:122px;
+
+  display:grid;
+  grid-template-columns:70px 1fr 46px;
+  align-items:center;
+  gap:28px;
+
+  padding:22px 0;
+
+  border-bottom:1px solid #DCE3EC;
+
+  transition:.25s ease;
+}
+
+.bettergas-subservice:hover{
+  padding-left:16px;
+  padding-right:16px;
+
+  background:rgba(29,39,86,.035);
+}
+
+.bettergas-subservice > span{
+  color:#1D2756;
+  font-size:10px;
+  font-weight:800;
+}
+
+.bettergas-subservice h3{
+  margin:0 0 7px;
+
+  color:#041B3E;
+
+  font-size:21px;
+  letter-spacing:-.03em;
+}
+
+.bettergas-subservice p{
+  margin:0;
+
+  color:#708097;
+
+  font-size:11.5px;
+  line-height:1.65;
+}
+
+.bettergas-subservice a{
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #D8E0EA;
+
+  color:#1D2756;
+
+  text-decoration:none;
+
+  transition:.25s ease;
+}
+
+.bettergas-subservice:hover a{
+  background:#1D2756;
+  border-color:#1D2756;
+
+  color:#fff;
+
+  transform:translateX(3px);
+}
+
+
+/* ==========================
+   ORIGINAL MOBILE LAYOUT
+========================== */
+
+@media(max-width:700px){
+
+  .bettergas-subservice{
+    min-height:105px;
+
+    grid-template-columns:32px 1fr 38px;
+    gap:13px;
+
+    padding:18px 0;
+  }
+
+  .bettergas-subservice:hover{
+    padding-left:8px;
+    padding-right:8px;
+  }
+
+  .bettergas-subservice > span{
+    font-size:10px;
+  }
+
+  .bettergas-subservice h3{
+    margin:0 0 7px;
+
+    font-size:16px;
+  }
+
+  .bettergas-subservice p{
+    font-size:10px;
+  }
+
+  .bettergas-subservice a{
+    width:36px;
+    height:36px;
+
+    font-size:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-subservices">
+
+  <div class="bettergas-subservice">
+    <span>01</span>
+
+    <div>
+      <h3>General Plumbing</h3>
+      <p>Everyday plumbing repairs and maintenance for homes, rental properties and commercial premises.</p>
+    </div>
+
+    <a href="#" aria-label="General Plumbing">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>02</span>
+
+    <div>
+      <h3>Plumbing Installations</h3>
+      <p>Professional installation of new pipework, fixtures, fittings and plumbing connections.</p>
+    </div>
+
+    <a href="#" aria-label="Plumbing Installations">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>03</span>
+
+    <div>
+      <h3>Leak Detection &amp; Trace &amp; Access</h3>
+      <p>Accurate investigation of hidden or difficult-to-locate water leaks with targeted access where required.</p>
+    </div>
+
+    <a href="#" aria-label="Leak Detection and Trace and Access">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>04</span>
+
+    <div>
+      <h3>Pipework Repairs &amp; Replacement</h3>
+      <p>Repair and replacement of damaged, leaking, corroded or unreliable pipework.</p>
+    </div>
+
+    <a href="#" aria-label="Pipework Repairs and Replacement">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>05</span>
+
+    <div>
+      <h3>Shower Pump Installation &amp; Repairs</h3>
+      <p>Installation, servicing and repair of shower pumps to restore or improve water pressure.</p>
+    </div>
+
+    <a href="#" aria-label="Shower Pump Installation and Repairs">→</a>
+  </div>
+
+
+  <div class="bettergas-subservice">
+    <span>06</span>
+
+    <div>
+      <h3>Water Leak &amp; Burst Pipe Repairs</h3>
+      <p>Responsive repairs for leaking or burst pipework to help limit damage and restore the system.</p>
+    </div>
+
+    <a href="#" aria-label="Water Leak and Burst Pipe Repairs">→</a>
+  </div>
+
+</div>
+
+</body>
+</html>

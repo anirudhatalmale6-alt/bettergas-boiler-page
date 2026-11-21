@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+/* REMOVE INTERNAL / INVISIBLE EMBED SCROLL ONLY */
+html,
+body{
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  margin:0;
+  background:transparent;
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-gas-callout{
+  width:100%;
+  background:transparent;
+}
+
+.bettergas-gas-callout-inner{
+  width:100%;
+  max-width:1180px;
+  margin:auto;
+
+  min-height:225px;
+
+  padding:38px 44px;
+
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:40px;
+
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      110deg,
+      #1D2756,
+      #073476 55%,
+      #041B3E
+    );
+
+  color:#fff;
+}
+
+.bettergas-gas-callout-inner::before{
+  content:"";
+
+  position:absolute;
+  left:0;
+  top:0;
+
+  width:6px;
+  height:100%;
+
+  background:#FFAB01;
+}
+
+.bettergas-gas-callout-inner::after{
+  content:"";
+
+  position:absolute;
+  right:-70px;
+  top:-90px;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 0 0 45px rgba(255,255,255,.02),
+    0 0 0 90px rgba(255,255,255,.015);
+}
+
+.bettergas-gas-callout-label{
+  display:block;
+
+  margin-bottom:10px;
+
+  color:#FFAB01;
+
+  font-size:9px;
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.bettergas-gas-callout h2{
+  margin:0 0 10px;
+
+  color:#fff;
+
+  font-size:30px;
+  letter-spacing:-.035em;
+}
+
+.bettergas-gas-callout p{
+  max-width:700px;
+  margin:0 0 10px;
+
+  color:rgba(255,255,255,.67);
+
+  font-size:12px;
+  line-height:1.7;
+}
+
+.bettergas-gas-callout small{
+  display:block;
+
+  color:rgba(255,255,255,.52);
+
+  font-size:9.5px;
+  line-height:1.6;
+}
+
+.bettergas-gas-callout a{
+  position:relative;
+  z-index:2;
+
+  min-height:50px;
+
+  padding:0 22px;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  background:#FFAB01;
+
+  color:#111;
+
+  font-size:11px;
+  font-weight:800;
+
+  text-decoration:none;
+
+  white-space:nowrap;
+
+  transition:.25s ease;
+}
+
+.bettergas-gas-callout a:hover{
+  transform:translateY(-2px);
+  background:#FFB82B;
+}
+
+.bettergas-gas-callout a span{
+  transition:.25s ease;
+}
+
+.bettergas-gas-callout a:hover span{
+  transform:translateX(4px);
+}
+
+@media(max-width:750px){
+
+  .bettergas-gas-callout-inner{
+    grid-template-columns:1fr;
+    padding:30px 24px;
+  }
+
+  .bettergas-gas-callout h2{
+    font-size:24px;
+  }
+
+  .bettergas-gas-callout a{
+    width:fit-content;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="bettergas-gas-callout">
+
+  <div class="bettergas-gas-callout-inner">
+
+    <div>
+
+      <span class="bettergas-gas-callout-label">
+        Gas Safety Support
+      </span>
+
+      <h2>
+        Gas Appliance Fault or Safety Concern?
+      </h2>
+
+      <p>
+        If a gas cooker, gas fire or other appliance is not operating
+        correctly, Better Gas can inspect the installation, diagnose
+        the problem and advise on the appropriate repair.
+      </p>
+
+      <small>
+        Smell gas or suspect an active leak? Call the National Gas
+        Emergency Service on 0800 111 999 first.
+      </small>
+
+    </div>
+
+    <a href="tel:08000599951">
+      Call Better Gas
+      <span>→</span>
+    </a>
+
+  </div>
+
+</section>
+
+</body>
+</html>

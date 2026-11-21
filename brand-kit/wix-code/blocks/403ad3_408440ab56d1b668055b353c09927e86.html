@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  max-width: 100%;
+
+  background: transparent;
+
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+
+  overscroll-behavior: none !important;
+  overscroll-behavior-x: none !important;
+  overscroll-behavior-y: none !important;
+
+  -webkit-overflow-scrolling: auto !important;
+
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+body {
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.bettergas-boiler-areas {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  background: transparent;
+
+  border-top: 1px solid #DCE3EC;
+  border-left: 1px solid #DCE3EC;
+}
+
+.bettergas-area-card {
+  min-height: 142px;
+
+  padding: 25px 28px;
+
+  background: transparent;
+
+  border-right: 1px solid #DCE3EC;
+  border-bottom: 1px solid #DCE3EC;
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.bettergas-area-card h3 {
+  margin: 0 0 8px;
+
+  color: #041B3E;
+
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
+
+  transition: color 0.25s ease;
+}
+
+.bettergas-area-card p {
+  margin: 0;
+
+  color: #708097;
+
+  font-size: 10.5px;
+  line-height: 1.6;
+
+  transition: color 0.25s ease;
+}
+
+.bettergas-area-card:hover {
+  background: #1D2756;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(0, 40, 100, 0.08);
+}
+
+.bettergas-area-card:hover h3 {
+  color: #FFFFFF;
+}
+
+.bettergas-area-card:hover p {
+  color: rgba(255,255,255,0.72);
+}
+
+
+@media (max-width: 900px) {
+  .bettergas-boiler-areas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ==========================
+   ORIGINAL MOBILE LAYOUT
+========================== */
+
+@media (max-width: 600px) {
+
+  .bettergas-boiler-areas {
+    grid-template-columns: 1fr;
+  }
+
+  .bettergas-area-card {
+    min-height: 110px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-boiler-areas">
+
+  <article class="bettergas-area-card">
+    <h3>Islington</h3>
+    <p>Boiler installation, servicing and repair.</p>
+  </article>
+
+  <article class="bettergas-area-card">
+    <h3>Camden</h3>
+    <p>Boiler engineers for homes and landlords.</p>
+  </article>
+
+  <article class="bettergas-area-card">
+    <h3>Hackney</h3>
+    <p>Boiler servicing, faults and replacement.</p>
+  </article>
+
+  <article class="bettergas-area-card">
+    <h3>Haringey</h3>
+    <p>Domestic and commercial boiler support.</p>
+  </article>
+
+  <article class="bettergas-area-card">
+    <h3>Westminster</h3>
+    <p>Professional boiler engineering services.</p>
+  </article>
+
+  <article class="bettergas-area-card">
+    <h3>City of London</h3>
+    <p>Commercial and managed property boilers.</p>
+  </article>
+
+  <article class="bettergas-area-card">
+    <h3>Tower Hamlets</h3>
+    <p>Boiler and heating engineering.</p>
+  </article>
+
+  <article class="bettergas-area-card">
+    <h3>Barnet</h3>
+    <p>Boiler services across North London.</p>
+  </article>
+
+</div>
+
+</body>
+</html>

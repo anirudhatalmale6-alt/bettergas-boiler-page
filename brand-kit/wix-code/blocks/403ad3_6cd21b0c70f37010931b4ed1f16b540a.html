@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+
+  width:100%;
+  max-width:100%;
+
+  background:transparent;
+
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-ufh-services{
+  width:100%;
+  max-width:1180px;
+
+  margin:auto;
+
+  border-top:1px solid #DCE3EC;
+}
+
+.bettergas-ufh-services article{
+  min-height:122px;
+
+  display:grid;
+  grid-template-columns:70px 1fr 46px;
+  align-items:center;
+
+  border-bottom:1px solid #DCE3EC;
+
+  transition:.25s ease;
+}
+
+.bettergas-ufh-services article:hover{
+  padding-left:16px;
+
+  background:#F5F8FC;
+}
+
+.bettergas-ufh-services .number{
+  color:#1D2756;
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.bettergas-ufh-services h3{
+  margin:0 0 7px;
+
+  color:#061A38;
+
+  font-size:21px;
+  font-weight:800;
+
+  letter-spacing:-.03em;
+}
+
+.bettergas-ufh-services p{
+  max-width:760px;
+
+  margin:0;
+
+  color:#708097;
+
+  font-size:11.5px;
+  line-height:1.65;
+}
+
+.bettergas-ufh-services .arrow{
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #DCE3EC;
+
+  color:#1D2756;
+
+  font-size:15px;
+}
+
+@media(max-width:650px){
+
+  .bettergas-ufh-services article{
+    min-height:110px;
+
+    grid-template-columns:32px 1fr 38px;
+
+    gap:8px;
+  }
+
+  .bettergas-ufh-services h3{
+    font-size:16px;
+  }
+
+  .bettergas-ufh-services p{
+    font-size:10px;
+  }
+
+  .bettergas-ufh-services .arrow{
+    width:36px;
+    height:36px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-ufh-services">
+
+  <article>
+    <span class="number">01</span>
+
+    <div class="copy">
+      <h3>Underfloor Heating Installation</h3>
+      <p>
+        Professional installation of wet underfloor heating systems
+        for residential and commercial properties.
+      </p>
+    </div>
+
+    <span class="arrow">→</span>
+  </article>
+
+
+  <article>
+    <span class="number">02</span>
+
+    <div class="copy">
+      <h3>Servicing &amp; Maintenance</h3>
+      <p>
+        Routine checks covering manifolds, pumps, valves,
+        controls and heating circuits.
+      </p>
+    </div>
+
+    <span class="arrow">→</span>
+  </article>
+
+
+  <article>
+    <span class="number">03</span>
+
+    <div class="copy">
+      <h3>Underfloor Heating Repairs</h3>
+      <p>
+        Repair support for systems experiencing poor heat,
+        circulation problems or component faults.
+      </p>
+    </div>
+
+    <span class="arrow">→</span>
+  </article>
+
+
+  <article>
+    <span class="number">04</span>
+
+    <div class="copy">
+      <h3>Fault Finding &amp; Diagnostics</h3>
+      <p>
+        Diagnosis of cold zones, irregular temperatures,
+        control faults and poor system flow.
+      </p>
+    </div>
+
+    <span class="arrow">→</span>
+  </article>
+
+
+  <article>
+    <span class="number">05</span>
+
+    <div class="copy">
+      <h3>Manifold &amp; Pump Repairs</h3>
+      <p>
+        Inspection and repair of manifolds, pumps,
+        actuators, valves and associated components.
+      </p>
+    </div>
+
+    <span class="arrow">→</span>
+  </article>
+
+
+  <article>
+    <span class="number">06</span>
+
+    <div class="copy">
+      <h3>Controls &amp; System Balancing</h3>
+      <p>
+        Support with thermostats, zoning, actuators
+        and balancing for improved heat distribution.
+      </p>
+    </div>
+
+    <span class="arrow">→</span>
+  </article>
+
+</div>
+
+</body>
+</html>

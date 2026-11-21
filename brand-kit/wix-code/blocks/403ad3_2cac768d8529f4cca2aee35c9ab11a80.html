@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+
+  width:100%;
+  max-width:100%;
+
+  background:transparent;
+
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-asHP-areas{
+  width:100%;
+  max-width:1180px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  border-top:1px solid #DCE3EC;
+  border-left:1px solid #DCE3EC;
+}
+
+.bettergas-asHP-areas article{
+  min-height:142px;
+
+  padding:25px 28px;
+
+  border-right:1px solid #DCE3EC;
+  border-bottom:1px solid #DCE3EC;
+
+  transition:.25s ease;
+}
+
+.bettergas-asHP-areas article:hover{
+  background:#1D2756;
+  transform:translateY(-2px);
+}
+
+.bettergas-asHP-areas h3{
+  margin:0 0 8px;
+
+  color:#041B3E;
+
+  font-size:17px;
+
+  transition:.25s ease;
+}
+
+.bettergas-asHP-areas p{
+  margin:0;
+
+  color:#708097;
+
+  font-size:10.5px;
+  line-height:1.6;
+
+  transition:.25s ease;
+}
+
+.bettergas-asHP-areas article:hover h3{
+  color:#fff;
+}
+
+.bettergas-asHP-areas article:hover p{
+  color:rgba(255,255,255,.72);
+}
+
+@media(max-width:900px){
+
+  .bettergas-asHP-areas{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:550px){
+
+  .bettergas-asHP-areas{
+    grid-template-columns:1fr;
+  }
+
+  .bettergas-asHP-areas article{
+    min-height:110px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-asHP-areas">
+
+  <article>
+    <h3>Islington</h3>
+    <p>Heat pump installation, servicing and repairs.</p>
+  </article>
+
+  <article>
+    <h3>Camden</h3>
+    <p>ASHP support for homes and managed properties.</p>
+  </article>
+
+  <article>
+    <h3>Hackney</h3>
+    <p>Heat pump diagnostics, repairs and optimisation.</p>
+  </article>
+
+  <article>
+    <h3>Haringey</h3>
+    <p>Air source heat pump installation and maintenance.</p>
+  </article>
+
+  <article>
+    <h3>Westminster</h3>
+    <p>Professional heat pump engineering services.</p>
+  </article>
+
+  <article>
+    <h3>City of London</h3>
+    <p>ASHP support for commercial and managed properties.</p>
+  </article>
+
+  <article>
+    <h3>Tower Hamlets</h3>
+    <p>Heat pump servicing, diagnostics and repairs.</p>
+  </article>
+
+  <article>
+    <h3>Barnet</h3>
+    <p>Air source heat pump services across North London.</p>
+  </article>
+
+</div>
+
+</body>
+</html>

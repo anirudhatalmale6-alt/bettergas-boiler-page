@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+
+    overscroll-behavior: none !important;
+    overscroll-behavior-x: none !important;
+    overscroll-behavior-y: none !important;
+
+    -webkit-overflow-scrolling: auto !important;
+
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  body {
+    background: #ffffff;
+    font-family: "Manrope", Arial, sans-serif;
+  }
+
+  .bettergas-image-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 34px 20px 42px;
+  }
+
+  .bettergas-image-wrap {
+    width: min(760px, 100%);
+    margin: 0 auto;
+
+    position: relative;
+    padding: 0 20px 20px 0;
+  }
+
+  /* Yellow accent behind image */
+  .bettergas-image-wrap::after {
+    content: "";
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 55%;
+    height: 56%;
+
+    background: #FFAB01;
+
+    z-index: 0;
+  }
+
+  .bettergas-main-image {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 470px;
+
+    display: block;
+    object-fit: cover;
+    object-position: center;
+
+    background: #f2f2f2;
+  }
+
+  /* Blue overlay card */
+  .bettergas-overlay {
+    position: absolute;
+    z-index: 3;
+
+    left: -42px;
+    bottom: 65px;
+
+    width: 295px;
+
+    padding: 30px 30px 28px;
+
+    background: #1D2756;
+    color: #ffffff;
+
+    box-shadow: 0 18px 45px rgba(0, 34, 90, 0.14);
+  }
+
+  .bettergas-eyebrow {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #FFAB01;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .bettergas-overlay h3 {
+    margin: 0 0 10px;
+
+    font-size: 25px;
+    line-height: 1.12;
+
+    font-weight: 800;
+    letter-spacing: -0.035em;
+  }
+
+  .bettergas-overlay p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.76);
+
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 850px) {
+
+    .bettergas-image-wrap {
+      width: min(680px, 100%);
+    }
+
+    .bettergas-overlay {
+      left: 18px;
+      bottom: 48px;
+
+      width: 275px;
+    }
+
+    .bettergas-main-image {
+      height: 420px;
+    }
+  }
+
+
+  /* ==========================
+     ORIGINAL MOBILE LAYOUT
+  ========================== */
+
+  @media (max-width: 600px) {
+
+    .bettergas-image-section {
+      padding: 20px 14px 0;
+    }
+
+    .bettergas-image-wrap {
+      width: 100%;
+      padding: 0 10px 10px 0;
+    }
+
+    .bettergas-image-wrap::after {
+      width: 60%;
+      height: 45%;
+    }
+
+    .bettergas-main-image {
+      width: 100%;
+      height: 340px;
+    }
+
+    .bettergas-overlay {
+      position: relative;
+
+      left: auto;
+      bottom: auto;
+
+      width: calc(100% - 30px);
+
+      margin: -62px 0 0 16px;
+
+      padding: 23px 22px;
+
+      z-index: 3;
+    }
+
+    .bettergas-overlay h3 {
+      font-size: 21px;
+    }
+
+    .bettergas-overlay p {
+      font-size: 11px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<section class="bettergas-image-section">
+
+  <div class="bettergas-image-wrap">
+
+    <img
+      class="bettergas-main-image"
+      src="https://static.wixstatic.com/media/403ad3_90336df155d44158b12858fd7b6ba7a9~mv2.webp"
+      alt="Better Gas plumbing and heating engineer"
+    >
+
+    <div class="bettergas-overlay">
+
+      <span class="bettergas-eyebrow">
+        Mechanical Services
+      </span>
+
+      <h3>
+        More Than<br>
+        Everyday Plumbing
+      </h3>
+
+      <p>
+        Boiler, gas, HIU, ASHP and commercial
+        heating expertise under one roof.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

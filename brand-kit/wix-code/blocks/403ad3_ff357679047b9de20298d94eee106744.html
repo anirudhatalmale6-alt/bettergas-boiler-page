@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+
+  width:100%;
+  max-width:100%;
+
+  background:transparent;
+
+  overflow:hidden !important;
+  overflow-x:hidden !important;
+  overflow-y:hidden !important;
+
+  overscroll-behavior:none !important;
+  overscroll-behavior-x:none !important;
+  overscroll-behavior-y:none !important;
+
+  -webkit-overflow-scrolling:auto !important;
+
+  scrollbar-width:none !important;
+  -ms-overflow-style:none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+}
+
+body{
+  font-family:"Manrope",Arial,sans-serif;
+}
+
+.bettergas-ufh-areas{
+  width:100%;
+  max-width:1180px;
+
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  border-top:1px solid #DCE3EC;
+  border-left:1px solid #DCE3EC;
+}
+
+.bettergas-ufh-areas article{
+  min-height:142px;
+
+  padding:25px 28px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  background:#FFFFFF;
+
+  border-right:1px solid #DCE3EC;
+  border-bottom:1px solid #DCE3EC;
+
+  transition:.25s ease;
+}
+
+.bettergas-ufh-areas article:hover{
+  background:#1D2756;
+}
+
+.bettergas-ufh-areas h3{
+  margin:0 0 8px;
+
+  color:#061A38;
+
+  font-size:17px;
+  font-weight:800;
+
+  transition:.25s ease;
+}
+
+.bettergas-ufh-areas p{
+  margin:0;
+
+  color:#708097;
+
+  font-size:10.5px;
+  line-height:1.6;
+
+  transition:.25s ease;
+}
+
+.bettergas-ufh-areas article:hover h3{
+  color:#FFFFFF;
+}
+
+.bettergas-ufh-areas article:hover p{
+  color:rgba(255,255,255,.68);
+}
+
+@media(max-width:850px){
+
+  .bettergas-ufh-areas{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:520px){
+
+  .bettergas-ufh-areas{
+    grid-template-columns:1fr;
+  }
+
+  .bettergas-ufh-areas article{
+    min-height:115px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bettergas-ufh-areas">
+
+  <article>
+    <h3>Chelsea &amp; Kensington</h3>
+    <p>Underfloor heating support for homes and managed properties.</p>
+  </article>
+
+  <article>
+    <h3>Westminster</h3>
+    <p>Installation, servicing and heating system repairs.</p>
+  </article>
+
+  <article>
+    <h3>Fulham</h3>
+    <p>Underfloor heating services for residential and commercial properties.</p>
+  </article>
+
+  <article>
+    <h3>Hammersmith</h3>
+    <p>Heating system maintenance, diagnosis and repair.</p>
+  </article>
+
+  <article>
+    <h3>Islington</h3>
+    <p>Underfloor heating support for homeowners and landlords.</p>
+  </article>
+
+  <article>
+    <h3>Camden</h3>
+    <p>Servicing, repairs and system fault finding.</p>
+  </article>
+
+  <article>
+    <h3>Southwark</h3>
+    <p>Professional heating and mechanical support.</p>
+  </article>
+
+  <article>
+    <h3>City of London</h3>
+    <p>Underfloor heating support for commercial and managed properties.</p>
+  </article>
+
+</div>
+
+</body>
+</html>
