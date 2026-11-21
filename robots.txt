@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /brand-kit/
 
 Sitemap: https://book.bettergas.co.uk/sitemap.xml
