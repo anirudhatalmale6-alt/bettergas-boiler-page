@@ -1,0 +1,11 @@
+Item Code,Description,Unit of Measure,Buy Price,Category,Standard
+BG-SERVICE,Annual gas boiler service (inc. flue gas analysis and safety checks),Each,0,Servicing,85
+BG-CP12,"Landlord gas safety certificate (CP12), all gas appliances checked",Each,0,Certificates,125
+BG-CALLOUT,Boiler repair call-out and diagnosis (includes first hour),Each,0,Repairs,110
+BG-LABOUR,Labour per hour (after first hour),Hour,0,Repairs,110
+BG-COMBI,"New combi boiler supply and installation (from, subject to survey and sizing)",Each,0,Installations,2200
+BG-POWERFLUSH,Central heating system powerflush,Each,0,Heating,650
+BG-HIU,Heat interface unit (HIU) service,Each,0,Servicing,95
+BG-ASHP,Air source heat pump service,Each,0,Servicing,185
+BG-COOKER,Gas cooker installation and safety check,Each,0,Installations,165
+BG-GASFIRE,Gas fire service and safety check,Each,0,Servicing,125
