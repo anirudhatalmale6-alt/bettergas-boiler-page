@@ -191,6 +191,10 @@
     btn.disabled = true;
     btn.textContent = 'Sending...';
     var data = new FormData(form);
+    // 23 Nov: Tradify names each enquiry after the sender, so send the customer's name
+    // (it showed every enquiry as "Better Gas website").
+    var who = (data.get('name') || '').toString().trim();
+    if (who) data.set('from_name', who + ' (website)');
     fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: data })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
