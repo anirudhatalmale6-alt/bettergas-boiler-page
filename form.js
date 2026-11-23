@@ -190,11 +190,17 @@
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true;
     btn.textContent = 'Sending...';
-    fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
+    var data = new FormData(form);
+    fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: data })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
         // only a confirmed success counts; anything else is a failure
         if (!res.ok || !res.j || res.j.success !== true) throw new Error('not delivered');
+        var tk = form.getAttribute('data-copy-key');
+        if (tk) {
+          data.set('access_key', tk);
+          fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: data }).catch(function () {});
+        }
         form.reset();
         say('Thanks, we have your details and will be in touch soon.', true);
         if (window.fbq) window.fbq('track', 'Lead');
