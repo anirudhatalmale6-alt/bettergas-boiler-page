@@ -150,6 +150,7 @@
     a.addEventListener('click', function () {
       if (window.fbq) window.fbq('track', 'Contact');
       if (window.gtag) window.gtag('event', 'contact', { method: 'whatsapp' });
+      if (window.ttq) window.ttq.track('Contact');
     });
   });
 
@@ -208,6 +209,7 @@
         form.reset();
         say('Thanks, we have your details and will be in touch soon.', true);
         if (window.fbq) window.fbq('track', 'Lead');
+        if (window.ttq) window.ttq.track('SubmitForm');
         if (window.gtag) { window.gtag('event', 'generate_lead'); if (window.BG_LEAD_SEND_TO) window.gtag('event', 'conversion', { send_to: window.BG_LEAD_SEND_TO, value: 1.0, currency: 'GBP' }); }
       })
       .catch(function () {
