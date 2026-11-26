@@ -1,4 +1,26 @@
 (function () {
+  // 26 Nov: client gets calls/enquiries but can't tell which ad they came from. Remember how the
+  // visitor FIRST arrived (ad click ids / utm / referrer) for this browser tab, and send it with the
+  // enquiry as "came_from" so it shows in the Tradify enquiry text.
+  var cameFrom = (function () {
+    var KEY = 'bg_came_from';
+    try { var saved = sessionStorage.getItem(KEY); if (saved) return saved; } catch (e) {}
+    var q = new URLSearchParams(location.search), src = (q.get('utm_source') || '').toLowerCase();
+    var med = (q.get('utm_medium') || '').toLowerCase(), ref = document.referrer || '', host = '';
+    try { host = ref ? new URL(ref).hostname : ''; } catch (e) {}
+    var v;
+    if (q.get('gclid') || q.get('gbraid') || q.get('wbraid') || (src === 'google' && med === 'cpc')) v = 'Google Ad';
+    else if (q.get('ttclid') || src === 'tiktok') v = 'TikTok ad';
+    else if (q.get('fbclid') || src === 'facebook' || src === 'instagram') v = 'Facebook / Instagram';
+    else if (src === 'google' && med === 'business_profile') v = 'Google Business Profile (Book button)';
+    else if (src) v = src + (med ? ' / ' + med : '');
+    else if (/(^|\.)google\./.test(host)) v = 'Google search (free listing)';
+    else if (host && host !== location.hostname) v = 'Link on ' + host;
+    else v = 'Direct (typed link, WhatsApp, text, flyer or email)';
+    try { sessionStorage.setItem(KEY, v); } catch (e) {}
+    return v;
+  })();
+
   // big review box: rotate, arrows, dots; pause on hover/focus/touch
   var box = document.querySelector('.rv-box');
   if (box) {
@@ -196,6 +218,7 @@
     // (it showed every enquiry as "Better Gas website").
     var who = (data.get('name') || '').toString().trim();
     if (who) data.set('from_name', who + ' (website)');
+    data.set('came_from', cameFrom);
     fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: data })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
